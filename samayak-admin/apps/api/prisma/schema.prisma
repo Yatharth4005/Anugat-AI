@@ -1,0 +1,239 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum Role {
+  ADMIN
+  COORDINATOR
+  HOD
+  DEAN
+  PROFESSOR
+}
+
+enum RoomType {
+  CLASSROOM
+  LAB
+  OTHER
+}
+
+enum CourseType {
+  LECTURE
+  LAB
+  TUTORIAL
+}
+
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+}
+
+enum Period {
+  I
+  II
+  III
+  IV
+  V
+  VI
+  VII
+  VIII
+  IX
+}
+
+enum ImportJobStatus {
+  QUEUED
+  PARSING
+  INTEGRATING
+  DONE
+  FAILED
+}
+
+enum EntityStatus {
+  ACTIVE
+  PENDING
+  ARCHIVED
+}
+
+// ─── Core Entities ────────────────────────────────────────────────────────────
+
+model Department {
+  id        String   @id @default(uuid())
+  name      String
+  shortCode String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  branches Branch[]
+  rooms    Room[]
+  faculty  Faculty[]
+
+  @@index([shortCode])
+}
+
+model Branch {
+  id           String   @id @default(uuid())
+  name         String   // e.g. "B.Tech CSE VI Sem - Section A"
+  semester     Int
+  section      String   // e.g. "A", "B", "MCA-II"
+  departmentId String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  department     Department       @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  courses        Course[]
+  timetableSlots TimetableSlot[]
+
+  @@unique([departmentId, semester, section])
+  @@index([departmentId])
+}
+
+model Room {
+  id           String       @id @default(uuid())
+  number       String       // e.g. "219", "Lab 1", "OOPDP Lab"
+  type         RoomType     @default(CLASSROOM)
+  capacity     Int?
+  departmentId String
+  status       EntityStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  department     Department      @relation(fields: [departmentId], references: [id], onDelete: Restrict)
+  timetableSlots TimetableSlot[]
+
+  @@unique([number, departmentId])
+  @@index([departmentId])
+  @@index([type])
+}
+
+model Course {
+  id       String       @id @default(uuid())
+  code     String
+  name     String
+  credits  Float
+  type     CourseType   @default(LECTURE)
+  branchId String
+  status   EntityStatus @default(ACTIVE)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  branch         Branch          @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  faculty        FacultyCourse[]
+  timetableSlots TimetableSlot[]
+
+  @@unique([code, branchId])
+  @@index([branchId])
+  @@index([code])
+}
+
+model Faculty {
+  id           String       @id @default(uuid())
+  name         String
+  email        String       @unique
+  passwordHash String
+  role         Role         @default(PROFESSOR)
+  departmentId String?
+  initials     String       // e.g. "VKB", "DKM"
+  status       EntityStatus @default(ACTIVE)
+  deletedAt    DateTime?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  department Department?     @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  courses    FacultyCourse[]
+  auditLogs  AuditLog[]
+
+  @@index([departmentId])
+  @@index([role])
+  @@index([email])
+  @@index([initials])
+}
+
+model FacultyCourse {
+  facultyId String
+  courseId  String
+
+  faculty Faculty @relation(fields: [facultyId], references: [id], onDelete: Cascade)
+  course  Course  @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@id([facultyId, courseId])
+}
+
+model TimetableSlot {
+  id        String @id @default(uuid())
+  day       Day
+  period    Period
+  startTime String // "09:00"
+  endTime   String // "09:50"
+  roomId    String?
+  courseId  String?
+  branchId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  room   Room?   @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  course Course? @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  branch Branch  @relation(fields: [branchId], references: [id], onDelete: Cascade)
+
+  @@unique([day, period, branchId])
+  @@index([roomId])
+  @@index([courseId])
+  @@index([branchId])
+  @@index([day, period])
+}
+
+// ─── Import Jobs ──────────────────────────────────────────────────────────────
+
+model ImportJob {
+  id        String          @id @default(uuid())
+  status    ImportJobStatus @default(QUEUED)
+  fileName  String
+  fileType  String          // "PDF" | "CSV" | "XLSX"
+  result    Json?
+  error     String?
+  progress  Int             @default(0) // 0-100
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ─── Audit Logs ───────────────────────────────────────────────────────────────
+
+model AuditLog {
+  id          String   @id @default(uuid())
+  action      String   // "CREATE" | "UPDATE" | "DELETE" | "IMPORT"
+  entityType  String   // "Department" | "Room" | "Course" | "Faculty"
+  entityId    String
+  userId      String?
+  metadata    Json?
+  timestamp   DateTime @default(now())
+  correlationId String?
+
+  user Faculty? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId])
+  @@index([userId])
+  @@index([timestamp])
+}
+
+// ─── Analytics Cache ──────────────────────────────────────────────────────────
+
+model AnalyticsCache {
+  id          String   @id @default("dashboard")
+  data        Json
+  computedAt  DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

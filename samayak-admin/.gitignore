@@ -1,0 +1,50 @@
+# Dependency directories
+node_modules/
+**/node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# TypeScript build output
+dist/
+build/
+
+# Environment files (secrets)
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+.env.example.local
+.env*.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE config files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary files
+.tmp/
+tmp/
+temp/
+
+# Timetable and Assignment PDFs
+*.pdf
+

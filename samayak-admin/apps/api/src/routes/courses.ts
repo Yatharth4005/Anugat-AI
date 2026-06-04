@@ -1,0 +1,163 @@
+import { Router, Request, Response, NextFunction } from 'express';
+import { z } from 'zod';
+import { prisma } from '../lib/prisma';
+import { authenticate, adminOnly } from '../middleware/auth';
+import { AppError } from '../middleware/errorHandler';
+import { parseCsvOrExcel } from '../services/importParser';
+import multer from 'multer';
+import { CourseType } from '@samayak/types';
+
+export const coursesRouter = Router();
+coursesRouter.use(authenticate);
+
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
+
+const createCourseSchema = z.object({
+  code: z.string().min(2).max(20).toUpperCase(),
+  name: z.string().min(2).max(300),
+  credits: z.number().min(0).max(20),
+  type: z.nativeEnum(CourseType).default(CourseType.LECTURE),
+  branchId: z.string().uuid(),
+});
+
+const updateCourseSchema = createCourseSchema.partial();
+
+// GET /api/courses
+coursesRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const page = Math.max(1, Number(req.query['page']) || 1);
+    const pageSize = Math.min(100, Math.max(1, Number(req.query['pageSize']) || 20));
+    const search = (req.query['search'] as string) || '';
+    const branchId = req.query['branchId'] as string | undefined;
+    const departmentId = req.query['departmentId'] as string | undefined;
+    const semester = req.query['semester'] ? Number(req.query['semester']) : undefined;
+    const type = req.query['type'] as CourseType | undefined;
+
+    const where: Record<string, unknown> = { status: 'ACTIVE' };
+    if (search) {
+      where['OR'] = [
+        { code: { contains: search, mode: 'insensitive' } },
+        { name: { contains: search, mode: 'insensitive' } },
+      ];
+    }
+    if (branchId) where['branchId'] = branchId;
+    if (type) where['type'] = type;
+    if (departmentId || semester) {
+      where['branch'] = {};
+      if (departmentId) (where['branch'] as Record<string, unknown>)['departmentId'] = departmentId;
+      if (semester) (where['branch'] as Record<string, unknown>)['semester'] = semester;
+    }
+
+    const [total, courses] = await Promise.all([
+      prisma.course.count({ where }),
+      prisma.course.findMany({
+        where,
+        skip: (page - 1) * pageSize,
+        take: pageSize,
+        orderBy: { code: 'asc' },
+        include: {
+          branch: {
+            select: { id: true, name: true, semester: true, section: true, departmentId: true },
+          },
+          faculty: {
+            include: { faculty: { select: { id: true, name: true, initials: true } } },
+          },
+          _count: { select: { timetableSlots: true } },
+        },
+      }),
+    ]);
+
+    res.json({ success: true, data: courses, total, page, pageSize, totalPages: Math.ceil(total / pageSize) });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// GET /api/courses/:id
+coursesRouter.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const course = await prisma.course.findUnique({
+      where: { id: req.params['id'] },
+      include: {
+        branch: { include: { department: true } },
+        faculty: { include: { faculty: true } },
+        timetableSlots: true,
+      },
+    });
+    if (!course) throw new AppError(404, 'Course not found');
+    res.json({ success: true, data: course });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /api/courses
+coursesRouter.post('/', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const data = createCourseSchema.parse(req.body);
+    const course = await prisma.course.create({ data });
+    res.status(201).json({ success: true, data: course });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// PATCH /api/courses/:id
+coursesRouter.patch('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const data = updateCourseSchema.parse(req.body);
+    const course = await prisma.course.update({ where: { id: req.params['id'] }, data });
+    res.json({ success: true, data: course });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE /api/courses/:id
+coursesRouter.delete('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    await prisma.course.update({
+      where: { id: req.params['id'] },
+      data: { status: 'ARCHIVED' },
+    });
+    res.json({ success: true, message: 'Course archived' });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /api/courses/import
+coursesRouter.post('/import', adminOnly, upload.single('file'), async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    if (!req.file) throw new AppError(400, 'No file uploaded');
+    const rows = await parseCsvOrExcel(req.file.buffer, req.file.mimetype);
+    const results = { created: 0, skipped: 0, errors: [] as { row: number; error: string }[] };
+
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      try {
+        const data = createCourseSchema.parse({
+          code: row['code'] || row['Course Code'] || row['CODE'],
+          name: row['name'] || row['Course Name'] || row['NAME'],
+          credits: Number(row['credits'] || row['Credits'] || 0),
+          type: row['type'] || row['Type'] || 'LECTURE',
+          branchId: row['branchId'] || row['Branch ID'],
+        });
+
+        await prisma.course.upsert({
+          where: { code_branchId: { code: data.code, branchId: data.branchId } },
+          create: data,
+          update: { name: data.name, credits: data.credits, type: data.type },
+        });
+        results.created++;
+      } catch (e: unknown) {
+        results.errors.push({ row: i + 2, error: e instanceof Error ? e.message : 'Unknown error' });
+        results.skipped++;
+      }
+    }
+
+    res.json({ success: true, data: results });
+  } catch (err) {
+    next(err);
+  }
+});
