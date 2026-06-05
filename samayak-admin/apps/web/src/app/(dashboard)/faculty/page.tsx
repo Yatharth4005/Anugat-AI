@@ -64,16 +64,16 @@ export default function FacultyPage() {
       </div>
 
       {/* Filters */}
-      <div style={{display:'flex',gap:12,marginBottom:20,flexWrap:'wrap',alignItems:'center'}}>
-        <div className="search-bar" style={{maxWidth:300}}>
+      <div className="filters-row">
+        <div className="search-bar">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input placeholder="Search name, email, initials..." value={search} onChange={e=>{setSearch(e.target.value);setPage(1);}} />
         </div>
-        <select className="input" style={{width:180}} value={filterRole} onChange={e=>{setFilterRole(e.target.value);setPage(1);}}>
+        <select className="input" value={filterRole} onChange={e=>{setFilterRole(e.target.value);setPage(1);}}>
           <option value="">All Roles</option>
           {Object.entries(ROLE_LABELS).map(([k,v]) => <option key={k} value={k}>{v}</option>)}
         </select>
-        <label style={{display:'flex',alignItems:'center',gap:8,fontSize:13.5,fontWeight:600,color:'var(--ink-soft)',cursor:'pointer'}}>
+        <label style={{display:'flex',alignItems:'center',gap:8,fontSize:13.5,fontWeight:600,color:'var(--ink-soft)',cursor:'pointer', whiteSpace: 'nowrap'}}>
           <input type="checkbox" checked={showArchived} onChange={e=>setShowArchived(e.target.checked)} style={{width:16,height:16}} />
           Show Archived
         </label>

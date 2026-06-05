@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Providers } from '@/components/Providers';
 
@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: 'Samayak Admin Panel | Anugat AI',
   description: 'Academic operations management platform — manage departments, rooms, courses, faculty and analyse timetable utilisation.',
   keywords: ['samayak', 'admin', 'timetable', 'anugat', 'academic'],
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

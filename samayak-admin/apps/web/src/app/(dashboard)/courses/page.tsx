@@ -78,17 +78,17 @@ export default function CoursesPage() {
       {/* Scope Selector */}
       <div style={{ background: 'var(--canvas-2)', border: '1.5px solid var(--line-2)', borderRadius: 'var(--r-card)', padding: '16px 20px', marginBottom: 20 }}>
         <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', color: 'var(--muted)', textTransform: 'uppercase', marginBottom: 12 }}>Scope Filter</div>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-          <div className="search-bar" style={{ maxWidth: 280 }}>
+        <div className="filters-row">
+          <div className="search-bar">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
             <input placeholder="Search by code or name..." value={search} onChange={e => { setSearch(e.target.value); setPage(1); }} />
           </div>
-          <select className="input" style={{ width: 200 }} value={filterDept} onChange={e => { setFilterDept(e.target.value); setFilterBranch(''); setPage(1); }}>
+          <select className="input" value={filterDept} onChange={e => { setFilterDept(e.target.value); setFilterBranch(''); setPage(1); }}>
             <option value="">All Departments</option>
             {depts?.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
           </select>
           {filterDept && (
-            <select className="input" style={{ width: 240 }} value={filterBranch} onChange={e => { setFilterBranch(e.target.value); setPage(1); }}>
+            <select className="input" value={filterBranch} onChange={e => { setFilterBranch(e.target.value); setPage(1); }}>
               <option value="">All Branches</option>
               {branches?.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
             </select>

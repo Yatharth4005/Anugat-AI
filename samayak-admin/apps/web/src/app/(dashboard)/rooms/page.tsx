@@ -71,16 +71,16 @@ export default function RoomsPage() {
       </div>
 
       {/* Filters */}
-      <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-        <div className="search-bar" style={{ maxWidth: 300 }}>
+      <div className="filters-row">
+        <div className="search-bar">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input placeholder="Search rooms..." value={search} onChange={(e) => { setSearch(e.target.value); setPage(1); }} />
         </div>
-        <select className="input" style={{ width: 160 }} value={filterType} onChange={(e) => { setFilterType(e.target.value); setPage(1); }}>
+        <select className="input" value={filterType} onChange={(e) => { setFilterType(e.target.value); setPage(1); }}>
           <option value="">All types</option>
           {Object.entries(ROOM_TYPE_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
         </select>
-        <select className="input" style={{ width: 200 }} value={filterDept} onChange={(e) => { setFilterDept(e.target.value); setPage(1); }}>
+        <select className="input" value={filterDept} onChange={(e) => { setFilterDept(e.target.value); setPage(1); }}>
           <option value="">All departments</option>
           {depts?.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
         </select>

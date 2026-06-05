@@ -72,7 +72,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--canvas)' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--canvas)' }} className="login-container">
       {/* ── Left: Brand panel ── */}
       <div
         style={{
@@ -232,7 +232,12 @@ export default function LoginPage() {
 
       <style>{`
         @media (max-width: 768px) {
-          .login-brand-panel { display: none; }
+          .login-container {
+            flex-direction: column;
+          }
+          .login-brand-panel {
+            display: none !important;
+          }
         }
       `}</style>
     </div>

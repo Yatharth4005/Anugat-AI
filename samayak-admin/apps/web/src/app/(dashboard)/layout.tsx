@@ -58,6 +58,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const { isAuthenticated, user, logout } = useAuthStore();
   const [mounted, setMounted] = useState(false);
   const [hydrated, setHydrated] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -105,15 +106,52 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="layout">
+      {/* Mobile Top Header */}
+      <header className="mobile-header">
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setIsSidebarOpen(true)}
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2.5" fill="none">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+        <div className="mobile-brand">
+          <div className="mobile-brand-logo">S</div>
+          <span style={{ fontWeight: 800, fontSize: 16 }}>Samayak</span>
+        </div>
+        <div style={{ width: 40 }} />
+      </header>
+
+      {/* Sidebar Overlay for Mobile */}
+      {isSidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setIsSidebarOpen(false)} />
+      )}
+
       {/* ── Sidebar ── */}
-      <aside className="sidebar">
+      <aside className={`sidebar ${isSidebarOpen ? 'mobile-open' : ''}`}>
         {/* Brand */}
-        <div className="sidebar-brand">
-          <div className="sidebar-brand-logo">S</div>
-          <div>
-            <span style={{ display: 'block' }}>Samayak</span>
-            <span className="sidebar-brand-sub">Admin Panel</span>
+        <div className="sidebar-brand" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 11 }}>
+            <div className="sidebar-brand-logo">S</div>
+            <div>
+              <span style={{ display: 'block' }}>Samayak</span>
+              <span className="sidebar-brand-sub">Admin Panel</span>
+            </div>
           </div>
+          <button
+            className="mobile-menu-close"
+            onClick={() => setIsSidebarOpen(false)}
+            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--ink)" strokeWidth="2.5" fill="none">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
         </div>
 
         {/* Nav */}
@@ -126,6 +164,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 href={item.href}
                 className={`nav-item ${isActive ? 'active' : ''}`}
                 id={`nav-${item.href.slice(1) || 'dashboard'}`}
+                onClick={() => setIsSidebarOpen(false)}
               >
                 {item.icon}
                 {item.label}

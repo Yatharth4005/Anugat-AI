@@ -158,7 +158,7 @@ export default function PdfIngestionPage() {
         </button>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 24, alignItems: 'start' }}>
+      <div className="ingestion-grid">
 
         {/* ── Left: Upload + Progress ── */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -254,7 +254,7 @@ export default function PdfIngestionPage() {
             <div className="card" style={{ padding: 24 }}>
               <div style={{ fontWeight: 800, fontSize: 17, marginBottom: 16 }}>Import Summary</div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
+              <div className="grid-2" style={{ marginBottom: 20, gap: 12 }}>
                 <div style={{ background: '#e9f7f1', borderRadius: 12, padding: '14px 16px' }}>
                   <div style={{ fontSize: 12, fontWeight: 800, color: '#1c7a5c', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>✓ Created</div>
                   {Object.entries(result.created).map(([k, v]) => (

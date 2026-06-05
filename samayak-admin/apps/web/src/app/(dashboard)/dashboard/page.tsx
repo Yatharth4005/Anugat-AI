@@ -127,7 +127,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Grid: Charts + Tables ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
+      <div className="dashboard-grid-2" style={{ marginBottom: 20 }}>
 
         {/* Room Utilisation Bar Chart */}
         <div className="card chart-container">
@@ -138,7 +138,7 @@ export default function DashboardPage() {
               <div className="empty-sub">No rooms found. Add rooms to see utilisation.</div>
             </div>
           ) : (
-            <ResponsiveContainer width="100%" height={240}>
+            <ResponsiveContainer width="100%" height={240} style={{ minHeight: '240px' }}>
               <BarChart data={data.roomUtilisations} margin={{ top: 4, right: 10, left: -20, bottom: 0 }}>
                 <XAxis dataKey="roomNumber" tick={{ fontSize: 11, fontWeight: 600, fill: '#7c8294' }} />
                 <YAxis tick={{ fontSize: 11, fill: '#7c8294' }} domain={[0, 100]} />
@@ -165,7 +165,7 @@ export default function DashboardPage() {
               <div className="empty-sub">No timetable data yet.</div>
             </div>
           ) : (
-            <ResponsiveContainer width="100%" height={240}>
+            <ResponsiveContainer width="100%" height={240} style={{ minHeight: '240px' }}>
               <BarChart
                 data={PERIODS.map((period) => {
                   const avail = data.slotAvailabilities.filter((s) => s.period === period);
@@ -328,7 +328,7 @@ function DashboardSkeleton() {
           </div>
         ))}
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+      <div className="dashboard-grid-2">
         <div className="card" style={{ padding: 24, height: 300 }}>
           <div className="skeleton" style={{ height: 18, width: 180, marginBottom: 8 }} />
           <div className="skeleton" style={{ height: 240 }} />
