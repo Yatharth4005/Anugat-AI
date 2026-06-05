@@ -55,7 +55,7 @@ const pdfWorker = new Worker(
       // Pre-compute bcrypt password hash outside transaction
       const passwordHash = await bcrypt.hash('Samayak@2024', 12);
 
-      await prisma.$transaction(async (tx) => {
+      await prisma.$transaction(async (tx: any) => {
         // ── 2a: Department ────────────────────────────────────────────────────
         const deptName = parsed.departmentName || 'Unknown Department';
         const deptShortCode = inferShortCode(deptName);
@@ -220,7 +220,7 @@ const pdfWorker = new Worker(
                 result.created.courses++;
               }
               courseId = course.id;
-              courseMap.set(cell.courseCode, courseId);
+              courseMap.set(cell.courseCode!, courseId!);
             }
 
             const roomDbId = cell.roomId ? roomMap.get(cell.roomId) ?? null : null;

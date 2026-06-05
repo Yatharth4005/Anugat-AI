@@ -32,7 +32,7 @@ export async function computeAnalytics(): Promise<AnalyticsDashboard> {
     },
   });
 
-  const roomUtilisations: RoomUtilisation[] = rooms.map((room) => {
+  const roomUtilisations: RoomUtilisation[] = rooms.map((room: any) => {
     const occupiedSlots = room.timetableSlots.length;
     const utilisationPct = TOTAL_SLOTS_PER_ROOM > 0
       ? (occupiedSlots / TOTAL_SLOTS_PER_ROOM) * 100
