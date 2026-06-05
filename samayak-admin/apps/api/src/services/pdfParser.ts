@@ -5,6 +5,7 @@ import * as path from 'path';
 import { logger } from '../lib/logger';
 import { Day, Period, CourseType, RoomType } from '@samayak/types';
 import { ParseFailure } from '@samayak/types';
+import { PDFParse } from 'pdf-parse';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -218,46 +219,63 @@ export async function parsePdfTimetable(
     rawText: '',
   };
 
-  logger.info('Starting PDF OCR parse', { filePath });
-  onProgress?.(5, 'Initializing OCR engine...');
+  logger.info('Starting PDF parse', { filePath });
+  onProgress?.(5, 'Initializing PDF parser...');
 
-  // Use pdfjs-dist to get page count and extract any embedded text first
   let allText = '';
+  let parser: PDFParse | null = null;
 
   try {
-    // Try to get text directly first (for vector PDFs)
-    const { getDocument } = await import('pdfjs-dist/legacy/build/pdf.js');
-    const pdfData = new Uint8Array(fs.readFileSync(filePath));
-    const pdfDoc = await getDocument({ data: pdfData }).promise;
-    const numPages = pdfDoc.numPages;
+    const fileBuffer = fs.readFileSync(filePath);
+    parser = new PDFParse({ data: new Uint8Array(fileBuffer), verbosity: 0 });
+    const numPages = parser.progress.total || 13;
 
-    logger.info(`PDF has ${numPages} pages`);
-    onProgress?.(10, `PDF loaded: ${numPages} pages. Starting text extraction...`);
-
-    // Try direct text extraction first
-    for (let p = 1; p <= numPages; p++) {
-      const page = await pdfDoc.getPage(p);
-      const textContent = await page.getTextContent();
-      const pageText = textContent.items
-        .map((item: unknown) => (item as { str?: string }).str ?? '')
-        .join(' ');
-      allText += `\n=== PAGE ${p} ===\n${pageText}`;
-    }
-
-    const hasText = allText.replace(/[=\s]/g, '').length > 100;
+    onProgress?.(10, `PDF loaded. Checking for text layer...`);
+    
+    // Extract text directly first to check if it's a vector PDF
+    const textResult = await parser.getText();
+    const cleanText = textResult.text.replace(/-- \d+ of \d+ --|\s/g, '');
+    const hasText = cleanText.length > 100;
 
     if (!hasText) {
-      // Scanned PDF — use OCR
-      logger.info('PDF appears scanned, using OCR...');
-      onProgress?.(15, 'PDF is scanned. Running OCR (this may take 1-2 minutes)...');
-      allText = await ocrPdf(filePath, numPages, onProgress);
+      logger.info('PDF appears scanned (no text layer found). Running OCR...');
+      onProgress?.(15, 'PDF is scanned. Initializing OCR engine (this may take a few moments)...');
+      
+      const worker = await createWorker('eng');
+      try {
+        for (let p = 1; p <= numPages; p++) {
+          const percent = 15 + Math.floor((p / numPages) * 50);
+          onProgress?.(percent, `OCR: Parsing page ${p}/${numPages}...`);
+          
+          const screenshotResult = await parser.getScreenshot({
+            first: p,
+            last: p,
+            scale: 2.0 // 2.0x scale for high-res crisp text OCR
+          });
+          
+          const pageScreenshot = screenshotResult.pages[0];
+          if (pageScreenshot) {
+            const { data: { text } } = await worker.recognize(Buffer.from(pageScreenshot.data));
+            allText += `\n=== PAGE ${p} ===\n${text}`;
+          }
+        }
+      } finally {
+        await worker.terminate();
+      }
     } else {
-      onProgress?.(40, 'Text extracted directly from PDF. Parsing structure...');
+      onProgress?.(40, 'Text layer found. Extracting data directly...');
+      for (let p = 1; p <= numPages; p++) {
+        const pageTextResult = await parser.getText({ first: p, last: p });
+        allText += `\n=== PAGE ${p} ===\n${pageTextResult.text}`;
+      }
     }
   } catch (pdfError) {
-    logger.warn('PDF.js extraction failed, falling back to OCR', { error: pdfError });
-    onProgress?.(15, 'Falling back to OCR...');
-    allText = await ocrPdf(filePath, 13, onProgress); // assume 13 pages like CSE PDF
+    logger.error('PDF parsing/OCR failed', { error: pdfError });
+    throw pdfError;
+  } finally {
+    if (parser) {
+      await parser.destroy();
+    }
   }
 
   result.rawText = allText;
@@ -392,32 +410,4 @@ export async function parsePdfTimetable(
   });
 
   return result;
-}
-
-async function ocrPdf(
-  filePath: string,
-  numPages: number,
-  onProgress?: (progress: number, message: string) => void
-): Promise<string> {
-  let allText = '';
-
-  // Use Tesseract on the PDF directly — tesseract.js can handle this
-  const worker = await createWorker('eng', 1, {
-    logger: (m: unknown) => {
-      const msg = m as { status?: string; progress?: number };
-      if (msg.status === 'recognizing text' && msg.progress !== undefined) {
-        const pct = 15 + Math.floor(msg.progress * 50);
-        onProgress?.(pct, `OCR in progress: ${Math.floor(msg.progress * 100)}%`);
-      }
-    },
-  });
-
-  try {
-    const result = await worker.recognize(filePath);
-    allText = result.data.text;
-  } finally {
-    await worker.terminate();
-  }
-
-  return allText;
 }

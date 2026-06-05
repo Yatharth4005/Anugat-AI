@@ -116,7 +116,7 @@ export default function PdfIngestionPage() {
           {/* Drop Zone */}
           <div className="card" style={{ padding: 24 }}>
             <div {...getRootProps()} className={`drop-zone ${isDragActive ? 'active' : ''}`}>
-              <input {...getInputProps()} ref={fileInputRef} />
+              <input {...getInputProps()} />
               <div className="drop-zone-icon">
                 {uploading ? (
                   <div className="spinner" />
