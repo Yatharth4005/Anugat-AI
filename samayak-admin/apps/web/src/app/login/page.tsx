@@ -9,7 +9,7 @@ import type { LoginResponse } from '@samayak/types';
 const DEMO_ACCOUNTS = [
   { label: 'Demo Admin', email: 'admin@samayak.edu', password: 'Admin@2024', role: 'ADMIN' },
   { label: 'Demo Coordinator', email: 'coordinator@samayak.edu', password: 'Coord@2024', role: 'COORDINATOR' },
-  { label: 'Demo Faculty', email: 'faculty@samayak.edu', password: 'Faculty@2024', role: 'PROFESSOR' },
+  { label: 'Demo Faculty', email: 'vkb@samayak.edu', password: 'Samayak@2024', role: 'PROFESSOR' },
 ];
 
 export default function LoginPage() {
