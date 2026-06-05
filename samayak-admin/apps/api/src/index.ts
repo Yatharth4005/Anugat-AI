@@ -17,7 +17,7 @@ import { healthRouter } from './routes/health';
 import { logger } from './lib/logger';
 
 const app = express();
-const PORT = process.env['API_PORT'] ?? 4000;
+const PORT = process.env['PORT'] ?? process.env['API_PORT'] ?? 4000;
 
 // ─── Security Middleware ──────────────────────────────────────────────────────
 app.use(helmet({
