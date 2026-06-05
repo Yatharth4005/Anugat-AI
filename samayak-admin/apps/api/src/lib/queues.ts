@@ -6,7 +6,7 @@ export const BULK_IMPORT_QUEUE = 'bulk-import';
 export const ANALYTICS_QUEUE = 'analytics';
 
 export const pdfIngestionQueue = new Queue(PDF_INGESTION_QUEUE, {
-  connection: redis,
+  connection: redis as any,
   defaultJobOptions: {
     attempts: 3,
     backoff: { type: 'exponential', delay: 2000 },
@@ -16,7 +16,7 @@ export const pdfIngestionQueue = new Queue(PDF_INGESTION_QUEUE, {
 });
 
 export const bulkImportQueue = new Queue(BULK_IMPORT_QUEUE, {
-  connection: redis,
+  connection: redis as any,
   defaultJobOptions: {
     attempts: 2,
     backoff: { type: 'fixed', delay: 1000 },
@@ -26,7 +26,7 @@ export const bulkImportQueue = new Queue(BULK_IMPORT_QUEUE, {
 });
 
 export const analyticsQueue = new Queue(ANALYTICS_QUEUE, {
-  connection: redis,
+  connection: redis as any,
   defaultJobOptions: {
     attempts: 3,
     backoff: { type: 'exponential', delay: 1000 },

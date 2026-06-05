@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useDropzone } from 'react-dropzone';
+import Link from 'next/link';
 import apiClient from '@/lib/apiClient';
 import type { ImportJob, ImportJobResult } from '@samayak/types';
 import { ImportJobStatus } from '@samayak/types';
@@ -17,10 +18,18 @@ const STEPS = [
 
 function getStepStatus(jobStatus: ImportJobStatus, stepKey: string): 'pending' | 'active' | 'done' | 'error' {
   const statusOrder = ['QUEUED', 'PARSING', 'INTEGRATING', 'DONE'];
+
+  if (jobStatus === 'FAILED') {
+    if (stepKey === 'DONE') return 'error';
+    return 'done';
+  }
+  if (jobStatus === 'DONE') {
+    return 'done';
+  }
+
   const jobIdx = statusOrder.indexOf(jobStatus);
   const stepIdx = statusOrder.indexOf(stepKey);
 
-  if (jobStatus === 'FAILED') return stepIdx <= jobIdx ? 'error' : 'pending';
   if (jobIdx > stepIdx) return 'done';
   if (jobIdx === stepIdx) return 'active';
   return 'pending';
@@ -31,7 +40,27 @@ export default function PdfIngestionPage() {
   const { toast } = useToast();
   const [activeJobId, setActiveJobId] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [resetting, setResetting] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleResetTimetable = async () => {
+    if (!window.confirm('Are you sure you want to reset all timetable slots, courses, and imported entities to the default seed baseline? This cannot be undone.')) {
+      return;
+    }
+    setResetting(true);
+    try {
+      await apiClient.delete('/api/timetable/reset');
+      qc.invalidateQueries({ queryKey: ['import-jobs-list'] });
+      qc.invalidateQueries({ queryKey: ['import-job'] });
+      qc.invalidateQueries({ queryKey: ['analytics'] });
+      setActiveJobId(null);
+      toast('Database reset to seed baseline successfully!', 'success');
+    } catch (err: any) {
+      toast(err?.response?.data?.error ?? 'Reset failed', 'error');
+    } finally {
+      setResetting(false);
+    }
+  };
 
   // Poll active job
   const { data: activeJob } = useQuery({
@@ -101,11 +130,32 @@ export default function PdfIngestionPage() {
 
   return (
     <div className="page-container">
-      <div className="page-header">
+      <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h1 className="page-title">Timetable PDF Ingestion</h1>
           <p className="page-subtitle">Upload a department timetable PDF — the system parses, extracts, and integrates it automatically</p>
         </div>
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={handleResetTimetable}
+          disabled={resetting}
+          style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+        >
+          {resetting ? (
+            <>
+              <div className="spinner" style={{ width: 14, height: 14, borderWidth: 2 }} />
+              Resetting...
+            </>
+          ) : (
+            <>
+              <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, stroke: 'currentColor', fill: 'none', strokeWidth: 2 }}>
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <polyline points="3 3 3 8 8 8" />
+              </svg>
+              Reset Timetable Data
+            </>
+          )}
+        </button>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 24, alignItems: 'start' }}>
@@ -193,7 +243,7 @@ export default function PdfIngestionPage() {
               {activeJob.status === 'DONE' && (
                 <div style={{ marginTop: 16, background: '#e9f7f1', border: '1.5px solid #b8e9d5', borderRadius: 10, padding: '12px 16px', fontSize: 13.5, color: '#1c7a5c', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
                   ✓ Analytics dashboard has been automatically updated with the new data.
-                  <a href="/dashboard" style={{ color: 'var(--brand-deep)', textDecoration: 'underline', marginLeft: 'auto' }}>View Dashboard →</a>
+                  <Link href="/dashboard" style={{ color: 'var(--brand-deep)', textDecoration: 'underline', marginLeft: 'auto' }}>View Dashboard →</Link>
                 </div>
               )}
             </div>

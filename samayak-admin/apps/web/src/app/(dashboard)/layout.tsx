@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useAuthStore } from '@/store/auth';
@@ -56,14 +56,35 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const router = useRouter();
   const pathname = usePathname();
   const { isAuthenticated, user, logout } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    setMounted(true);
+
+    const checkHydrated = () => {
+      if (useAuthStore.persist.hasHydrated()) {
+        setHydrated(true);
+        return true;
+      }
+      return false;
+    };
+
+    if (!checkHydrated()) {
+      const unsub = useAuthStore.persist.onFinishHydration(() => {
+        setHydrated(true);
+      });
+      return () => unsub();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mounted && hydrated && !isAuthenticated) {
       router.replace('/login');
     }
-  }, [isAuthenticated, router]);
+  }, [mounted, hydrated, isAuthenticated, router]);
 
-  if (!isAuthenticated || !user) return null;
+  if (!mounted || !hydrated || !isAuthenticated || !user) return null;
 
   const initials = user.name
     .split(' ')

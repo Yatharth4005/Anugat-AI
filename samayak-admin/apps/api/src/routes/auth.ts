@@ -44,7 +44,7 @@ authRouter.post('/login', async (req: Request, res: Response, next: NextFunction
     const token = jwt.sign(
       { userId: faculty.id, role: faculty.role, email: faculty.email },
       secret,
-      { expiresIn: process.env['JWT_EXPIRES_IN'] ?? '7d' }
+      { expiresIn: (process.env['JWT_EXPIRES_IN'] ?? '7d') as any }
     );
 
     res.json({

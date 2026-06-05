@@ -1,0 +1,1223 @@
+
+=== PAGE 1 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+BAM3 	TT of Bachelor of Animation & Multimedia Sem- 3 	Ver- 1.0 wef : 01-Sep-2025
+Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN201 ss Lab 	MN201 ss Lab 	AN201 	AN202 	MN422 	AN210 Lab 	AN210 Lab
+Faculty 	RTP 	RTP 	OBD 	OBD 	JKC 	MCH 	MCH
+Venue 	CR-02 	CR-02 	A&M CR 	A&M CR 	CR-01 	A&M CR 	A&M CR
+TUE
+Subject 	AN203 Lab 	AN203 Lab 	AN203 Lab 	AN201 	AN204 Lab 	AN204 Lab 	AN204 Lab
+Faculty 	VPN 	VPN 	VPN 	OBD 	RIS 	RIS 	RIS
+Venue 	A&M 2D Lab 	A&M 2D Lab 	A&M 2D Lab 	A&M BCL 	A&M BCL 	A&M BCL
+WED
+Subject 	AN205 Lab 	AN205 Lab 	AN205 Lab 	AN206 Lab 	AN206 Lab 	AN210 Lab 	AN210 Lab
+Faculty 	GKG 	GKG 	GKG 	MCH 	MCH 	MCH 	MCH
+Venue 	A&M CR 	A&M CR 	A&M CR 	A&M BCL 	A&M BCL 	A&M BCL 	A&M BCL
+THU
+Subject 	MN422 	AN202 	AN206 Lab 	AN206 Lab 	AN207 Lab 	AN207 Lab
+Faculty 	JKC 	OBD 	MCH 	MCH 	GKG 	GKG
+Venue 	CR-03 	A&M VFX Lab 	A&M BCL 	A&M BCL 	A&M 2D Lab 	A&M 2D Lab
+FRI
+Subject 	MN422 	AN207 Lab 	AN207 Lab 	MN201 Th 	MN201 Th
+Faculty 	JKC 	GKG 	GKG 	RTP 	RTP
+Venue 	CR-03 	A&M BCL 	A&M BCL 	CR-02 	CR-02
+SAT
+Subject
+Faculty
+Venue
+Legend for BAM3
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	AN201 	Writing & Storytelling [2] 	Obed Longvah 	OBD 	A&M 2D Lab 	A&M 2D Lab
+2 	AN202 	Audio Visual Technology [2] 	Obed Longvah 	OBD 	A&M BCL 	A&M BAM Comp Lab
+3 	MN422 	Intigrated Marketing Communication [3] 	J K Chandel 	JKC 	A&M CR 	A&M Class Room
+4 	MN201 Th 	Personality Development [2] 	Ritu Pareek 	RTP 	A&M VFX Lab 	A&M VFX Lab
+5 	AN203 Lab 	Animation Techniques [2] 	Vibhuti Pandya 	VPN 	CR-01 	Class Room 01
+6 	AN204 Lab 	Graphic Design Tools & Techniques-II [1.5] 	Rishika Sharma 	RIS 	CR-02 	Class Room 02
+7 	AN205 Lab 	Visual Studies-III [1.5] 	Gautam Kr. Goswami 	GKG 	CR-03 	Class Room 03
+8 	AN206 Lab 	3D Modeling Techniques-II [2] 	Manish Kr. Chaudhary 	MCH
+9 	AN207 Lab 	Outdoor Study-III [2] 	Gautam Kr. Goswami 	GKG
+10 	AN210 Lab 	Architectural Modeling [3] 	Manish Kr. Chaudhary 	MCH
+11 	MN201 ss Lab Personality Development Lab [1] 	Ritu Pareek 	RTP
+1 of 35
+BAM5 	TT of Bachelor of Animation & Multimedia Sem- 5 	Ver- 1.0 wef : 01-Sep-2025
+Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	AN312 Lab 	AN312 Lab 	AN312 Lab 	AN302 Lab 	AN302 Lab 	AN302 Lab 	AN302 Lab
+Faculty 	GKG 	GKG 	GKG 	GCH 	GCH 	GCH 	GCH
+Venue 	A&M BCL 	A&M BCL 	A&M BCL 	A&M BCL 	A&M BCL 	A&M BCL 	A&M BCL
+TUE
+Subject 	AN301 	AN305 Lab 	AN305 Lab 	AN305 Lab 	AN304 Lab 	AN304 Lab 	AN304 Lab
+Faculty 	OBD 	MCH 	MCH 	MCH 	VPN 	VPN 	VPN
+Venue 	A&M VFX Lab 	A&M BCL 	A&M BCL 	A&M BCL 	A&M 2D Lab 	A&M 2D Lab 	A&M 2D Lab
+WED
+Subject 	AN309 Lab 	AN309 Lab 	AN309 Lab 	AN301 	AN301 	AN303 Lab 	AN303 Lab 	AN303 Lab
+Faculty 	OBD 	OBD 	OBD 	OBD 	OBD 	RIS 	RIS 	RIS
+Venue 	A&M VFX Lab 	A&M VFX Lab 	A&M VFX Lab 	A&M VFX Lab 	A&M VFX Lab 	A&M VFX Lab 	A&M VFX Lab 	A&M BCL
+THU
+Subject 	AN307 Lab 	AN307 Lab 	AN307 Lab 	AN310 Lab 	AN310 Lab 	AN306 Lab 	AN306 Lab
+Faculty 	MCH 	MCH 	MCH 	RIS 	RIS 	MCH 	MCH
+Venue 	A&M BCL 	A&M BCL 	A&M BCL 	A&M VFX Lab 	A&M VFX Lab 	A&M BCL 	A&M BCL
+FRI
+Subject 	AN306 Lab 	AN306 Lab 	AN310 Lab 	AN310 Lab 	AN308 Lab 	AN308 Lab 	AN308 Lab
+Faculty 	MCH 	MCH 	RIS 	RIS 	GKG 	GKG 	GKG
+Venue 	A&M VFX Lab 	A&M VFX Lab 	A&M 2D Lab 	A&M 2D Lab 	A&M BCL 	A&M BCL 	A&M BCL
+SAT
+Subject
+Faculty
+Venue
+Legend for BAM5
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	AN301 	Direction For Animation [3] 	Obed Longvah 	OBD 	A&M 2D Lab 	A&M 2D Lab
+2 	AN302 Lab 	Character Design [3] 	Gaurav Chaudhary 	GCH 	A&M BCL 	A&M BAM Comp Lab
+3 	AN303 Lab 	Graphic Design Tools & Techniques-IV (UI/ UX) [1.5] 	Rishika Sharma 	RIS 	A&M VFX Lab 	A&M VFX Lab
+4 	AN304 Lab 	Comic Production [1.5] 	Vibhuti Pandya 	VPN
+5 	AN305 Lab 	Character Animation-II [1.5] 	Manish Kr. Chaudhary 	MCH
+6 	AN306 Lab 	3D Character Modeling, Texturing, Lighting & Rendering [2]Manish Kr. Chaudhary 	MCH
+7 	AN307 Lab 	Game Engine [1.5] 	Manish Kr. Chaudhary 	MCH
+8 	AN308 Lab 	Layout & Digital Painting [1.5] 	Gautam Kr. Goswami 	GKG
+9 	AN309 Lab 	Documentary Film Making [1.5] 	Obed Longvah 	OBD
+
+-- 1 of 25 --
+
+
+=== PAGE 2 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+10 	AN310 Lab 	Field Study [2] 	Rishika Sharma 	RIS
+11 	AN312 Lab 	3D Sculpting [2] 	Gautam Kr. Goswami 	GKG
+2 of 35
+BBA1 	TT of Bachelor of Business Administration Sem- 1 	Ver- 1.0 wef : 01-Sep-2025
+15 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN25102 	MN25119 	MN25106 	CA25110 ss Lab 	CA25110 ss Lab
+Faculty 	PVM 	PRS 	JKC 	TIJ 	TIJ
+Venue 	CR-04 	CR-01 	CR-01 	CL-3 	CL-3
+TUE
+Subject 	MN25102 	MN25108 	MN25119 	MN25118 	MN25106
+Faculty 	PVM 	PVM 	PRS 	RKS 	JKC
+Venue 	CR-06 	CR-03 	CR-03 	CR-01 	CR-01
+WED
+Subject 	CA25110 Th 	MN25106 	MN25119 	MN25108 	MN25111
+Faculty 	SKA 	JKC 	PRS 	PVM 	RKS
+Venue 	CR-01 	CR-01 	CR-01 	CR-01 	CR-04
+THU
+Subject 	MN25118 	HS24131 Lab 	CA25110 ss Lab 	CA25110 ss Lab 	MN25111
+Faculty 	RKS 	RTP 	TIJ 	TIJ 	RKS
+Venue 	CR-01 	CR-01 	CL-3 	CL-3 	CR-10
+FRI
+Subject 	MN25118 	HS24131 Lab 	HS24131 Lab 	MN25108
+Faculty 	RKS 	RTP 	RTP 	PVM
+Venue 	CR-01 	CR-01 	CR-01 	CR-10
+SAT
+Subject
+Faculty
+Venue
+Legend for BBA1
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MN25106 	Principles of Management [3] 	J K Chandel 	JKC 	CL-3 	Computer Lab 3
+2 	MN25119 	Statistics for Managers [3] 	Priyanshu Sharma 	PRS 	CR-01 	Class Room 01
+3 	MN25108 	Introduction To Business Accounting [3] 	Purvi Mathur 	PVM 	CR-03 	Class Room 03
+4 	HS24131 Lab 	Communication Skills - I [1.5] 	Ritu Pareek 	RTP 	CR-04 	Class Room 04
+5 	MN25118 	Introduction to Computing [3] 	Rakesh Singh 	RKS 	CR-06 	Class Room 06
+6 	MN25102 	Human Values & Professional Ethics [2] 	Purvi Mathur 	PVM 	CR-10 	Class Room 10
+7 	MN25111 	Digital Empowerment [2] 	Rakesh Singh 	RKS
+8 	CA25110 Th 	Office Automation Tools Th [1] 	Santosh Kr. Agarwal 	SKA
+9
+CA25110 ss
+Lab 	Office Automation Tools Lab [2] 	Tiju Thomas 	TIJ
+3 of 35
+BBA3 	TT of Bachelor of Business Administration Sem- 3 	Ver- 1.0 wef : 01-Sep-2025
+15 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN201 ss Lab 	MN201 ss Lab 	MN204 	MN206 	MN207 	MN205
+Faculty 	RTP 	RTP 	RPS 	PRS 	RPS 	PRS
+Venue 	CR-02 	CR-02 	CR-02 	CR-05 	CR-05 	CR-05
+TUE
+Subject 	MN205 	MN204 	MN206 	MN207
+Faculty 	PRS 	RPS 	PRS 	RPS
+Venue 	CR-02 	CR-02 	CR-02 	CR-02
+WED
+Subject 	MN204 	MN205 	MN206 	MN207
+Faculty 	RPS 	PRS 	PRS 	RPS
+Venue 	CR-01 	CR-01 	CR-01 	CR-01
+THU
+Subject 	MN203 Th 	MN203 Th 	MN202
+Faculty 	PRS 	PRS 	NIS
+Venue 	CR-02 	CR-02 	CR-02
+FRI
+Subject 	MN202 	MN201 Th 	MN201 Th 	MN203 ss Lab 	MN203 ss Lab
+Faculty 	NIS 	RTP 	RTP 	PRS 	PRS
+Venue 	CR-02 	CR-02 	CR-02 	CL-3 	CL-3
+SAT
+Subject
+Faculty
+Venue
+Legend for BBA3
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MN201 Th 	Personality Development Th [2] 	Ritu Pareek 	RTP 	CL-3 	Computer Lab 3
+
+-- 2 of 25 --
+
+
+=== PAGE 3 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+2 	MN202 	Environment Science [2] 	Nidhi Singh 	NIS 	CR-01 	Class Room 01
+3 	MN203 Th 	Computerized Accouting Th [2] 	Priyanshu Sharma 	PRS 	CR-02 	Class Room 02
+4 	MN204 	Introduction to Financial Systems [3] 	Roopali Sharma 	RPS 	CR-05 	Class Room 05
+5 	MN205 	Introduction to Business Analytics [3] 	Priyanshu Sharma 	PRS
+6 	MN206 	Quantitative Techniques in Managemnet [3] 	Priyanshu Sharma 	PRS
+7 	MN207 	Research Methodology [3] 	Roopali Sharma 	RPS
+8 	MN201 ss Lab Personality Development Lab [1] 	Ritu Pareek 	RTP
+9 	MN203 ss Lab Computerized Accouting Lab [1] 	Priyanshu Sharma 	PRS
+4 of 35
+BBA5 	TT of Bachelor of Business Administration Sem- 5 	Ver- 1.0 wef : 01-Sep-2025
+30 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN436 Th 	MN423 	MN412 / MN425 MN411 / MN424 	MN422
+Faculty 	PKS 	PVM 	PRS / PVM 	RPS / JKC 	JKC
+Venue 	CR-13 	CR-03 	CR-01 / CR-03 	CR-01 / CR-03 	CR-01
+TUE
+Subject 	MN436 ss Lab 	MN436 ss Lab 	MN434 ss Lab 	MN434 ss Lab 	MN302
+Faculty 	PKS 	PKS 	PVM 	PVM 	RKS
+Venue 	LangLab 	LangLab 	LangLab 	LangLab 	CR-07
+WED
+Subject MN411 / MN424 MN412 / MN425 	MN436 Th 	MN302 	MN434 Th
+Faculty 	RPS / JKC 	PRS / PVM 	PKS 	RKS 	PVM
+Venue 	CR-02 / CR-04 	CR-02 / CR-04 	CR-02 	CR-03 	CR-03
+THU
+Subject 	MN422 	MN411 / MN424 	MN423 	MN423 	MN301
+Faculty 	JKC 	RPS / JKC 	PVM 	PVM 	RPS
+Venue 	CR-03 	CR-02 / CR-03 	CR-03 	CR-03 	CR-03
+FRI
+Subject 	MN422 	MN412 / MN425 	MN301 	MN302 	MN434 Th
+Faculty 	JKC 	PRS / PVM 	RPS 	RKS 	PVM
+Venue 	CR-03 	CR-10 / CR-03 	CR-01 	CR-01 	CR-01
+SAT
+Subject
+Faculty
+Venue
+Legend for BBA5
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MN301 	Entrepreneurship and Small Business [2] 	Roopali Sharma 	RPS 	CR-01 	Class Room 01
+2 	MN302 	Introduction to Materials Management & Production Management [3]	Rakesh Singh 	RKS 	CR-02 	Class Room 02
+3 	MN303 	Summer Internship/ Project [3] 	Faculty not required 	FNR 	CR-03 	Class Room 03
+4 	MN411 	International Finance [3] 	Roopali Sharma 	RPS 	CR-04 	Class Room 04
+5 	MN412 	Equity & Debt Market [3] 	Priyanshu Sharma 	PRS 	CR-07 	Class Room 07
+6 	MN422 	Integrated Marketing Communication [3] 	J K Chandel 	JKC 	CR-10 	Class Room 10
+7 	MN423 	Consumer Behaviour [3] 	Purvi Mathur 	PVM 	CR-13 	Class Room 13
+8 	MN436 Th 	DBMS Th [2] 	P K Sharma 	PKS 	LangLab 	Language Lab
+9 	MN434 Th 	Data Visualisation For Managers Th [2] 	Purvi Mathur 	PVM
+10 	MN424 	Manpower Planning [3] 	J K Chandel 	JKC
+11 	MN425 	Industrial Relations [3] 	Purvi Mathur 	PVM
+12 MN436 ss LabDBMS Lab [1] 	P K Sharma 	PKS
+13 MN434 ss LabData Visualisation For Managers Lab [1] 	Purvi Mathur 	PVM
+5 of 35
+BCA1 	TT of Bachelor of Computer Applications Sem- 1 	Ver- 1.0 wef : 01-Sep-2025
+27 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN25102 	MN25106 	PR25001 	CA25112 ss Lab 	CA25112 ss Lab 	CA25112 Th
+Faculty 	PVM 	JKC 	BHA 	BKS 	BKS 	BKS
+Venue 	CR-04 	CR-09 	CR-09 	CL-1 	CL-1 	CR-01
+TUE
+Subject 	MN25102 	CA25109 	CA25107 	HS24131 Lab 	CA25101 	MN25106
+Faculty 	PVM 	NIS 	RKS 	RTP 	VIG 	JKC
+Venue 	CR-06 	CR-06 	CR-06 	CR-06 	CR-13 	CR-13
+WED
+Subject 	CA25107 	PR25001 	CA25102 Lab 	CA25102 Lab 	CA25102 Lab 	CA25105 	CA25109
+Faculty 	RKS 	BHA 	PTK 	PTK 	PTK 	PKS 	NIS
+Venue 	CR-07 	CR-07 	CL-1 	CL-1 	CL-1 	CR-02 	CR-06
+THU
+Subject 	PR25001 	CA25105 	CA25101 	HS24131 Lab 	HS24131 Lab
+Faculty 	BHA 	PKS 	VIG 	RTP 	RTP
+Venue 	CR-05 	CR-05 	CR-05 	CR-05 	CR-05
+FRI
+Subject 	CA25112 ss Lab 	CA25112 ss Lab 	CA25101 	MN25106 	CA25105
+Faculty 	BKS 	BKS 	VIG 	JKC 	PKS
+Venue 	CL-1 	CL-1 	CR-10 	CR-10 	CR-10
+SAT
+Subject
+
+-- 3 of 25 --
+
+
+=== PAGE 4 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+SAT
+Faculty
+Venue
+Legend for BCA1
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	PR25001 	Elementary Mathematics [0] 	Bhawna Agarwal 	BHA 	CL-1 	Computer Lab 1
+2 	CA25101 	Programming and Problem Solving using C [3] 	Vivek Gaur 	VIG 	CR-01 	Class Room 01
+3 	CA25105 	Basics of Operating Systems [3] 	P K Sharma 	PKS 	CR-02 	Class Room 02
+4 	CA25107 	Fundamentals of Computer Science [2] 	Rakesh Singh 	RKS 	CR-04 	Class Room 04
+5 	MN25106 	Principles of Management [3] 	J K Chandel 	JKC 	CR-05 	Class Room 05
+6 	MN25102 	Human Values and Professional Ethics [2] 	Purvi Mathur 	PVM 	CR-06 	Class Room 06
+7 	CA25109 	Environmental Science [2] 	Nidhi Singh 	NIS 	CR-07 	Class Room 07
+8 	HS24131 Lab 	Communications Skill - I [1.5] 	Ritu Pareek 	RTP 	CR-09 	Class Room 09
+9 	CA25102 Lab 	C Lab [1.5] 	Prateek Sharma 	PTK 	CR-10 	Class Room 10
+10 	CA25112 Th 	Linux administration Th [1] 	B K Singh 	BKS 	CR-13 	Class Room 13
+11
+CA25112 ss
+Lab 	Linux administration Lab [2] 	B K Singh 	BKS
+6 of 35
+BCA3 	TT of Bachelor of Computer Applications Sem- 3 	Ver- 1.0 wef : 01-Sep-2025
+35 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN109 	CN207 	CN203 	CN205 	CN201
+Faculty 	RTP 	BHA 	PKS 	AML 	ABM
+Venue 	CR-04 	CR-04 	CR-04 	CR-04 	CR-04
+TUE
+Subject 	CN203 	CN207 	MN109 	CN202 Lab 	CN202 Lab
+Faculty 	PKS 	BHA 	RTP 	ABM 	ABM
+Venue 	CR-10 	CR-10 	CR-10 	CL-3 	CL-3
+WED
+Subject 	CN207 	CN203 	CN201 	CN202 Lab 	CN202 Lab
+Faculty 	BHA 	PKS 	ABM 	ABM 	ABM
+Venue 	CR-02 	CR-02 	CR-02 	CL-3 	CL-3
+THU
+Subject 	MN203 Th 	MN203 Th 	CN205 	CN204 Lab 	CN204 Lab
+Faculty 	PRS 	PRS 	AML 	PKS 	PKS
+Venue 	CR-02 	CR-02 	CR-02 	CL-3 	CL-3
+FRI
+Subject 	CN204 Lab 	CN204 Lab 	CN201 	MN203 ss Lab 	MN203 ss Lab
+Faculty 	PKS 	PKS 	ABM 	PRS 	PRS
+Venue 	CL-3 	CL-3 	CR-03 	CL-3 	CL-3
+SAT
+Subject
+Faculty
+Venue
+Legend for BCA3
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	CN201 	Java Programming [3] 	Archana Bhatnagar 	ABM 	CL-3 	Computer Lab 3
+2 	CN203 	DBMS [3] 	P K Sharma 	PKS 	CR-02 	Class Room 02
+3 	CN205 	Concept of Programming Language [2] 	Aruna Malik 	AML 	CR-03 	Class Room 03
+4 	CN207 	Mathematics for Computing II [3] 	Bhawna Agarwal 	BHA 	CR-04 	Class Room 04
+5 	MN109 	Public Speaking and Creative Writing [2] 	Ritu Pareek 	RTP 	CR-10 	Class Room 10
+6 	CN202 Lab 	Java Lab [2] 	Archana Bhatnagar 	ABM
+7 	CN204 Lab 	DBMS Lab [2] 	P K Sharma 	PKS
+8 	MN203 Th 	Copmputerized Accounting Th [2] 	Priyanshu Sharma 	PRS
+9 	MN203 ss Lab Computerized Accouting Lab [1] 	Priyanshu Sharma 	PRS
+7 of 35
+BCA5 	TT of Bachelor of Computer Applications Sem- 5 	Ver- 1.0 wef : 01-Sep-2025
+37 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	CN303 	CN307 	CN301
+Faculty 	SCG 	SKS 	AML
+Venue 	CR-10 	CR-10 	CR-10
+TUE
+Subject 	CN309 	CN301 	CN307 	CN303 	CN308 Lab 	CN308 Lab
+Faculty 	RKS 	AML 	SKS 	SCG 	SKS 	SKS
+Venue 	CR-01 	CR-01 	CR-01 	CR-01 	CL-3 	CL-3
+WED
+Subject 	CN301 	CN307 	CN309 	CN304 Lab 	CN304 Lab
+Faculty 	AML 	SKS 	RKS 	SCG 	SCG
+
+-- 4 of 25 --
+
+
+=== PAGE 5 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+WED 	Venue 	CR-10 	CR-10 	CR-10 	CL-3 	CL-3
+THU
+Subject 	CN301 	CN309 	CN303
+Faculty 	AML 	RKS 	SCG
+Venue 	CR-10 	CR-10 	CR-10
+FRI
+Subject 	CN304 Lab 	CN304 Lab 	CN309 	CN308 Lab 	CN308 Lab
+Faculty 	SCG 	SCG 	RKS 	SKS 	SKS
+Venue 	CL-3 	CL-3 	CR-02 	CL-3 	CL-3
+SAT
+Subject
+Faculty
+Venue
+Legend for BCA5
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	CN301 	Fundamentals of Computer Algorithm [4] 	Aruna Malik 	AML 	CL-3 	Computer Lab 3
+2 	CN303 	Introduction to Machine Learning [3] 	Subhash Gupta 	SCG 	CR-01 	Class Room 01
+3 	CN307 	Web Programming [3] 	Santosh Kr. Sharma 	SKS 	CR-02 	Class Room 02
+4 	CN309 	Software Testing [4] 	Rakesh Singh 	RKS 	CR-10 	Class Room 10
+5 	CN304 Lab 	Machine Learning Lab [2] 	Subhash Gupta 	SCG
+6 	CN308 Lab 	Web Programming Lab [2] 	Santosh Kr. Sharma 	SKS
+7 	CN312 	Internship/Project [2] 	Santosh Kr. Sharma 	SKS
+8 of 35
+BSc (AI & DS)1 	TT of Bachelors of Science (AI & DS) Sem- 1 	Ver- 1.0 wef : 01-Sep-2025
+22 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN25102 	SC25101 	SC25109 	CA25112 ss Lab 	CA25112 ss Lab 	CA25112 Th
+Faculty 	PVM 	SKA 	BHA 	BKS 	BKS 	BKS
+Venue 	CR-04 	CR-11 	CR-09 	CL-1 	CL-1 	CR-01
+TUE
+Subject 	MN25102 	CA25109 	SC25107 	HS24131 Lab 	SC25101 	SC25105
+Faculty 	PVM 	NIS 	RKS 	RTP 	SKA 	BIP
+Venue 	CR-06 	CR-06 	CR-06 	CR-06 	CR-05 	CR-05
+WED
+Subject 	SC25107 	SC25109 	SC25102 Lab 	SC25102 Lab 	SC25102 Lab 	SC25105 	CA25109
+Faculty 	RKS 	BHA 	PTK 	PTK 	PTK 	BIP 	NIS
+Venue 	CR-07 	CR-07 	CL-1 	CL-1 	CL-1 	CR-04 	CR-06
+THU
+Subject 	SC25109 	SC25101 	HS24131 Lab 	HS24131 Lab
+Faculty 	BHA 	SKA 	RTP 	RTP
+Venue 	CR-05 	CR-04 	CR-05 	CR-05
+FRI
+Subject 	CA25112 ss Lab 	CA25112 ss Lab 	SC25105
+Faculty 	BKS 	BKS 	BIP
+Venue 	CL-1 	CL-1 	CR-05
+SAT
+Subject
+Faculty
+Venue
+Legend for BSc (AI & DS)1
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	SC25101 	Programming with C [3] 	Santosh Kr. Agarwal 	SKA 	CL-1 	Computer Lab 1
+2 	SC25105 	Operating Systems [3] 	B Pathak 	BIP 	CR-01 	Class Room 01
+3 	SC25107 	Fundamentals of Computing [2] 	Rakesh Singh 	RKS 	CR-04 	Class Room 04
+4 	SC25109 	Fundamentals of Mathematics [3] 	Bhawna Agarwal 	BHA 	CR-05 	Class Room 05
+5 	CA25109 	Environmental Science [2] 	Nidhi Singh 	NIS 	CR-06 	Class Room 06
+6 	MN25102 	Human Values and Professional Ethics [2] 	Purvi Mathur 	PVM 	CR-07 	Class Room 07
+7 	SC25102 Lab 	C Programming Lab [1.5] 	Prateek Sharma 	PTK 	CR-09 	Class Room 09
+8 	HS24131 Lab 	Communication Skills-I [1.5] 	Ritu Pareek 	RTP 	CR-11 	Class Room 11
+9 	CA25112 Th 	Linux administration Th [1] 	B K Singh 	BKS
+10
+CA25112 ss
+Lab 	Linux administration Lab [2] 	B K Singh 	BKS
+9 of 35
+BSc (BA)1 	TT of Bachelors of Science (BA) Sem- 1 	Ver- 1.0 wef : 01-Sep-2025
+3 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+
+-- 5 of 25 --
+
+
+=== PAGE 6 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+MON
+Subject 	MN25102 	MN25119 	BA25101 	CA25110 ss Lab 	CA25110 ss Lab
+Faculty 	PVM 	PRS 	JKC 	TIJ 	TIJ
+Venue 	CR-04 	CR-01 	CR-01 	CL-3 	CL-3
+TUE
+Subject 	MN25102 	MN25108 	MN25119 	MN25118 	BA25101
+Faculty 	PVM 	PVM 	PRS 	RKS 	JKC
+Venue 	CR-06 	CR-03 	CR-03 	CR-01 	CR-01
+WED
+Subject 	CA25110 Th 	BA25101 	MN25119 	MN25108 	MN25111
+Faculty 	SKA 	JKC 	PRS 	PVM 	RKS
+Venue 	CR-01 	CR-01 	CR-01 	CR-01 	CR-04
+THU
+Subject 	MN25118 	HS24131 Lab 	CA25110 ss Lab 	CA25110 ss Lab 	MN25111
+Faculty 	RKS 	RTP 	TIJ 	TIJ 	RKS
+Venue 	CR-01 	CR-01 	CL-3 	CL-3 	CR-10
+FRI
+Subject 	MN25118 	HS24131 Lab 	HS24131 Lab 	MN25108
+Faculty 	RKS 	RTP 	RTP 	PVM
+Venue 	CR-01 	CR-01 	CR-01 	CR-10
+SAT
+Subject
+Faculty
+Venue
+Legend for BSc (BA)1
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	HS24131 Lab 	Communication Skills- I [1.5] 	Ritu Pareek 	RTP 	CL-3 	Computer Lab 3
+2 	MN25118 	Introduction to Computing [3] 	Rakesh Singh 	RKS 	CR-01 	Class Room 01
+3 	MN25102 	Human Values & Professional Ethics [2] 	Purvi Mathur 	PVM 	CR-03 	Class Room 03
+4 	MN25111 	Digital Empowerment [2] 	Rakesh Singh 	RKS 	CR-04 	Class Room 04
+5 	CA25110 Th 	Office Automation Tools Th [1] 	Santosh Kr. Agarwal 	SKA 	CR-06 	Class Room 06
+6 	BA25101 	Principles and Practices of Management [3] 	J K Chandel 	JKC 	CR-10 	Class Room 10
+7 	MN25119 	Statistics for Managers [3] 	Priyanshu Sharma 	PRS
+8 	MN25108 	Introduction to Business Accounting [3] 	Purvi Mathur 	PVM
+9
+CA25110 ss
+Lab 	Office Automation Tools Lab [2] 	Tiju Thomas 	TIJ
+10 of 35
+BSc (VC)1 	TT of Bachelors of Science (VC) Sem- 1 	Ver- 1.0 wef : 01-Sep-2025
+9 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MN25102 	VC25102 	CA25110 ss Lab 	CA25110 ss Lab 	VC25103 Lab 	VC25103 Lab 	VC25103 Lab
+Faculty 	PVM 	RIS 	TIJ 	TIJ 	VPN 	VPN 	VPN
+Venue 	CR-04 	A&M CR 	CL-3 	CL-3 	A&M 2D Lab 	A&M 2D Lab 	A&M 2D Lab
+TUE
+Subject 	MN25102 	AN25109 Lab 	AN25109 Lab 	VC25101 	AN25109 Lab 	AN25109 Lab 	AN25109 Lab
+Faculty 	PVM 	OBD 	OBD 	GKG 	OBD 	OBD 	OBD
+Venue 	CR-06 	A&M VFX Lab 	A&M VFX Lab 	A&M 2D Lab 	A&M VFX Lab 	A&M VFX Lab 	A&M VFX Lab
+WED
+Subject 	CA25110 Th 	VC25104 Lab 	VC25104 Lab 	VC25104 Lab 	MN25111 	VC25101
+Faculty 	SKA 	MCH 	MCH 	MCH 	RKS 	GKG
+Venue 	CR-01 	A&M BCL 	A&M BCL 	A&M BCL 	CR-04 	A&M 2D Lab
+THU
+Subject 	VC25101 	HS24131 Lab 	CA25110 ss Lab 	CA25110 ss Lab 	MN25111
+Faculty 	GKG 	RTP 	TIJ 	TIJ 	RKS
+Venue 	A&M 2D Lab 	CR-01 	CL-3 	CL-3 	CR-10
+FRI
+Subject 	VC25102 	HS24131 Lab 	HS24131 Lab 	VC25102
+Faculty 	RIS 	RTP 	RTP 	RIS
+Venue 	A&M CR 	CR-01 	CR-01 	A&M CR
+SAT
+Subject
+Faculty
+Venue
+Legend for BSc (VC)1
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	VC25101 	Introduction to Visual Communication [3] 	Gautam Kr. Goswami 	GKG 	A&M 2D Lab 	A&M 2D Lab
+2 	CA25110 Th 	Office Automation Tools Th [1] 	Santosh Kr. Agarwal 	SKA 	A&M BCL 	A&M BAM Comp Lab
+3 	MN25102 	Human Values & Professional Ethics [2] 	Purvi Mathur 	PVM 	A&M CR 	A&M Class Room
+4 	VC25102 	Fundamentals of Visual Art [3] 	Rishika Sharma 	RIS 	A&M VFX Lab 	A&M VFX Lab
+5 	MN25111 	Digital Empowerment [2] 	Rakesh Singh 	RKS 	CL-3 	Computer Lab 3
+6 	HS24131 Lab 	Communication Skills-I [1.5] 	Ritu Pareek 	RTP 	CR-01 	Class Room 01
+7 	VC25103 Lab 	Experimental Animation Workshop [2] 	Vibhuti Pandya 	VPN 	CR-04 	Class Room 04
+8 	VC25104 Lab 	Fundamentals of 3D [1.5] 	Manish Kr. Chaudhary 	MCH 	CR-06 	Class Room 06
+9 	AN25109 Lab 	Photography [3] 	Obed Longvah 	OBD 	CR-10 	Class Room 10
+10
+CA25110 ss
+Lab 	Office Automation Tools Lab [2] 	Tiju Thomas 	TIJ
+
+-- 6 of 25 --
+
+
+=== PAGE 7 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+11 of 35
+BT 1st Yr1A 	TT of B.Tech. 1st Yr Sem- 1 Sec- A 	Ver- 1.0 wef : 01-Sep-2025
+Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MA24101
+CH24102 Lab /
+PE24102 Lab
+CH24102 Lab /
+PE24102 Lab 	CH24101 	ME24101 	CE24101
+Faculty 	IKD 	RNA / ABP 	RNA / ABP 	RNA 	VKS 	NIS
+Venue 	CR-09
+Chm Lab / Mech.
+Ws
+Chm Lab / Mech.
+Ws 	CR-06 	CR-06 	CR-06
+TUE
+Subject 	CE24101 	EC24101 	ME24101 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab
+Faculty 	NIS 	SNE 	VKS 	BKS 	BKS 	BKS 	BKS
+Venue 	CR-11 	CR-11 	CR-11 	ED Hall 	ED Hall 	ED Hall 	ED Hall
+WED
+Subject 	MA24101 	CH24101 	EC24101 	ME24101
+EC24102 Lab /
+CH24102 Lab
+EC24102 Lab /
+CH24102 Lab
+Faculty 	IKD 	RNA 	SNE 	VKS
+SNE / RNA /
+DDG 	SNE / RNA / DDG
+Venue 	CR-06 	CR-06 	CR-06 	CR-06
+EL-2 / Chm Lab /
+EL-2 	EL-2 / Chm Lab / EL-2
+THU
+Subject 	EC24101 	MA24101 	CH24101
+MC24104 Lab /
+MC24102 Lab
+MC24104 Lab /
+MC24102 Lab
+Faculty 	SNE 	IKD 	RNA 	CA1 / NS1 	CA1 / NS1
+Venue 	CR-06 	CR-06 	CR-06 	CR-06 / OD1 	CR-06 / OD1
+FRI
+Subject
+EC24102 Lab /
+PE24102 Lab
+EC24102 Lab /
+PE24102 Lab 	CH24101 	MA24101
+Faculty 	SNE / ABP / DDG 	SNE / ABP / DDG 	RNA 	IKD
+Venue
+EL-2 / Mech. Ws
+/ EL-2
+EL-2 / Mech. Ws
+/ EL-2 	CR-12 	CR-12
+SAT
+Subject
+Faculty
+Venue
+Legend for BT 1st Yr1A
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MA24101 	Mathematics - I [4] 	I K Dadheech 	IKD 	Chm Lab 	Chemistry Lab
+2 	CH24101 	Chemistry [4] 	Ranjana Agarwal 	RNA 	CR-06 	Class Room 06
+3 	EC24101 	Basics Electronics and Communication Engineering [3] 	Snehanshu Shekhar 	SNE 	CR-09 	Class Room 09
+4 	ME24101 	Basics of Mechanical Engineering [3] 	Vikas Sangwan 	VKS 	CR-11 	Class Room 11
+5 	CE24101 	Environmental Sciences [2] 	Nidhi Singh 	NIS 	CR-12 	Class Room 12
+6 	CH24102 Lab 	Chemistry Lab [1] 	Ranjana Agarwal 	RNA 	ED Hall 	Engg. Drawing Hall
+7 	EC24102 Lab 	Basic Electronics and Communication Lab [1] 	Snehanshu Shekhar 	SNE 	D D Gupta 	DDG 	EL-2 	Electronics Lab 2
+8 	ME24102 Lab Engineering Graphics [2] 	B K Singh 	BKS 	Mech. Ws 	Mech. Workhop
+9 	MC24104 Lab Creative Arts [1] 	CA Faculty1 	CA1 	OD1 	Out door1
+10 	PE24102 Lab 	Workshop Practice [1] 	Abinash Pankaj 	ABP
+11 	MC24102 Lab NSS [1] 	NSS Facuity1 	NS1
+12 of 35
+BT 1st Yr1B 	TT of B.Tech. 1st Yr Sem- 1 Sec- B 	Ver- 1.0 wef : 01-Sep-2025
+Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	CH24101 	ME24101 	MA24101 	CE24101
+EC24102 Lab /
+PE24102 Lab
+EC24102 Lab /
+PE24102 Lab
+Faculty 	RNA 	VKS 	IKD 	NIS
+AKA / ABP /
+DDG 	AKA / ABP / DDG
+Venue 	CR-06 	CR-06 	CR-06 	CR-07
+EL-2 / Mech. Ws
+/ EL-2
+EL-2 / Mech. Ws / EL-
+2
+TUE
+Subject 	ME24101 	CH24101 	MA24101 	EC24101
+CH24102 Lab /
+PE24102 Lab
+CH24102 Lab /
+PE24102 Lab
+Faculty 	VKS 	RNA 	IKD 	AKA 	RNA / ABP 	RNA / ABP
+Venue 	CR-09 	CR-09 	CR-07 	CR-07
+Chm Lab /
+Mech. Ws 	Chm Lab / Mech. Ws
+WED
+Subject 	CE24101 	EC24101 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab
+Faculty 	NIS 	AKA 	BKS 	BKS 	BKS 	BKS
+Venue 	CR-12 	CR-07 	ED Hall 	ED Hall 	ED Hall 	ED Hall
+THU
+Subject
+EC24102 Lab /
+CH24102 Lab
+EC24102 Lab /
+CH24102 Lab 	MA24101
+MC24104 Lab /
+MC24102 Lab
+MC24104 Lab /
+MC24102 Lab 	CH24101
+Faculty 	AKA / RNA / DDG AKA / RNA / DDG 	IKD 	CA1 / NS1 	CA1 / NS1 	RNA
+Venue
+EL-2 / Chm Lab /
+EL-2
+EL-2 / Chm Lab /
+EL-2 	CR-07 	CR-06 / OD1 	CR-06 / OD1 	CR-06
+FRI
+Subject 	EC24101 	CH24101 	MA24101 	ME24101
+Faculty 	AKA 	RNA 	IKD 	VKS
+Venue 	CR-07 	CR-07 	CR-07 	CR-07
+
+-- 7 of 25 --
+
+
+=== PAGE 8 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+SAT
+Subject
+Faculty
+Venue
+Legend for BT 1st Yr1B
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MA24101 	Mathematics - I [4] 	I K Dadheech 	IKD 	Chm Lab 	Chemistry Lab
+2 	CH24101 	Chemistry [4] 	Ranjana Agarwal 	RNA 	CR-06 	Class Room 06
+3 	EC24101 	Basics Electronics and Communication Engineering [3] 	Ankur agarwal 	AKA 	CR-07 	Class Room 07
+4 	ME24101 	Basics of Mechanical Engineering [3] 	Vikas Sangwan 	VKS 	CR-09 	Class Room 09
+5 	CE24101 	Environmental Sciences [2] 	Nidhi Singh 	NIS 	CR-12 	Class Room 12
+6 	CH24102 Lab 	Chemistry Lab [1] 	Ranjana Agarwal 	RNA 	ED Hall 	Engg. Drawing Hall
+7 	EC24102 Lab 	Basic Electronics and Communication Lab [1] 	Ankur agarwal 	AKA 	D D Gupta 	DDG 	EL-2 	Electronics Lab 2
+8 	ME24102 Lab Engineering Graphics [2] 	B K Singh 	BKS 	Mech. Ws 	Mech. Workhop
+9 	MC24104 Lab Creative Arts [1] 	CA Faculty1 	CA1 	OD1 	Out door1
+10 	PE24102 Lab 	Workshop Practice [1] 	Abinash Pankaj 	ABP
+11 	MC24102 Lab NSS [1] 	NSS Facuity1 	NS1
+13 of 35
+BT 1st Yr1C 	TT of B.Tech. 1st Yr Sem- 1 Sec- C 	Ver- 1.0 wef : 01-Sep-2025
+Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	CH24101 	MA24101 	CE24101
+MC24104 Lab /
+MC24102 Lab
+MC24104 Lab /
+MC24102 Lab
+Faculty 	RAJ 	GSM 	NIS 	CA2 / NS2 	CA2 / NS2
+Venue 	CR-08 	CR-08 	CR-08 	CR-12 	CR-12
+TUE
+Subject 	MA24101 	EC24101
+EC24102 Lab /
+CH24102 Lab
+EC24102 Lab /
+CH24102 Lab 	CH24101 	CE24101
+Faculty 	GSM 	PUS 	PUS / RAJ / DDG 	PUS / RAJ / DDG 	RAJ 	NIS
+Venue 	CR-08 	CR-08
+EL-2 / Chm Lab /
+EL-2
+EL-2 / Chm Lab /
+EL-2 	CR-12 	CR-12
+WED
+Subject 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab 	MA24101 	ME24101 	EC24101
+Faculty 	BKS 	BKS 	BKS 	BKS 	GSM 	VKS 	PUS
+Venue 	ED Hall 	ED Hall 	ED Hall 	ED Hall 	CR-08 	CR-08 	CR-08
+THU
+Subject 	ME24101
+EC24102 Lab /
+PE24102 Lab
+EC24102 Lab /
+PE24102 Lab 	CH24101
+PE24102 Lab /
+CH24102 Lab
+PE24102 Lab /
+CH24102 Lab
+Faculty 	VKS 	PUS / ABP / DDG 	PUS / ABP / DDG 	RAJ 	ABP / RAJ 	ABP / RAJ
+Venue 	CR-07
+EL-2 / Mech. Ws
+/ EL-2
+EL-2 / Mech. Ws
+/ EL-2 	CR-07 	CR-11 / Chm Lab 	CR-11 / Chm Lab
+FRI
+Subject 	ME24101 	MA24101 	EC24101 	CH24101
+Faculty 	VKS 	GSM 	PUS 	RAJ
+Venue 	CR-08 	CR-08 	CR-08 	CR-08
+SAT
+Subject
+Faculty
+Venue
+Legend for BT 1st Yr1C
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MA24101 	Mathematics - I [4] 	Gurminder Singh 	GSM 	Chm Lab 	Chemistry Lab
+2 	CH24101 	Chemistry [4] 	Rajni Agarwal 	RAJ 	CR-07 	Class Room 07
+3 	EC24101 	Basics Electronics and Communication Engineering [3] 	Puneet Sharma 	PUS 	CR-08 	Class Room 08
+4 	ME24101 	Basics of Mechanical Engineering [3] 	Vikas Sangwan 	VKS 	CR-11 	Class Room 11
+5 	CE24101 	Environmental Sciences [2] 	Nidhi Singh 	NIS 	CR-12 	Class Room 12
+6 	CH24102 Lab 	Chemistry Lab [1] 	Rajni Agarwal 	RAJ 	ED Hall 	Engg. Drawing Hall
+7 	EC24102 Lab 	Basic Electronics and Communication Lab [1] 	Puneet Sharma 	PUS 	D D Gupta 	DDG 	EL-2 	Electronics Lab 2
+8 	ME24102 Lab Engineering Graphics [2] 	B K Singh 	BKS 	Mech. Ws 	Mech. Workhop
+9 	MC24104 Lab Creative Arts [1] 	CA Faculty2 	CA2
+10 	PE24102 Lab 	Workshop Practice [1] 	Abinash Pankaj 	ABP
+11 	MC24102 Lab NSS [1] 	NSS Facuity2 	NS2
+14 of 35
+BT 1st Yr1D 	TT of B.Tech. 1st Yr Sem- 1 Sec- D 	Ver- 1.0 wef : 01-Sep-2025
+Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	CE24101 	MA24101 	CH24101
+MC24104 Lab /
+MC24102 Lab
+MC24104 Lab /
+MC24102 Lab
+Faculty 	NIS 	PYT 	RAJ 	CA2 / NS2 	CA2 / NS2
+Venue 	CR-12 	CR-12 	CR-12 	CR-12 	CR-12
+
+-- 8 of 25 --
+
+
+=== PAGE 9 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+TUE
+Subject
+EC24102 Lab /
+CH24102 Lab
+EC24102 Lab /
+CH24102 Lab 	MA24101 	EC24101 	EC24101 	CH24101
+Faculty 	AKA / RAJ / DDG 	AKA / RAJ / DDG 	PYT 	AKA 	AKA 	RAJ
+Venue
+EL-2 / Chm Lab /
+EL-2
+EL-2 / Chm Lab /
+EL-2 	CR-09 	CR-09 	CR-09 	CR-09
+WED
+Subject
+CH24102 Lab /
+PE24102 Lab
+CH24102 Lab /
+PE24102 Lab 	ME24101 	CH24101 	EC24101
+Faculty 	RAJ / ABP 	RAJ / ABP 	VKS 	RAJ 	AKA
+Venue
+Chm Lab / Mech.
+Ws
+Chm Lab / Mech.
+Ws 	CR-08 	CR-08 	CR-08
+THU
+Subject 	CH24101 	MA24101 	ME24101 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab 	ME24102 Lab
+Faculty 	RAJ 	PYT 	VKS 	VKS 	VKS 	VKS 	VKS
+Venue 	CR-08 	CR-08 	CR-08 	ED Hall 	ED Hall 	ED Hall 	ED Hall
+FRI
+Subject 	CE24101 	MA24101 	ME24101
+EC24102 Lab /
+PE24102 Lab
+EC24102 Lab /
+PE24102 Lab
+Faculty 	NIS 	PYT 	VKS 	AKA / ABP / DDG
+AKA / ABP /
+DDG
+Venue 	CR-09 	CR-09 	CR-09
+EL-2 / Mech. Ws
+/ EL-2
+EL-2 / Mech. Ws
+/ EL-2
+SAT
+Subject
+Faculty
+Venue
+Legend for BT 1st Yr1D
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MA24101 	Mathematics - I [4] 	Peeyush Tiwari 	PYT 	Chm Lab 	Chemistry Lab
+2 	CH24101 	Chemistry [4] 	Rajni Agarwal 	RAJ 	CR-08 	Class Room 08
+3 	EC24101 	Basics Electronics [3] 	Ankur agarwal 	AKA 	CR-09 	Class Room 09
+4 	ME24101 	Basics of Mechanical Engineering [3] 	Vikas Sangwan 	VKS 	CR-12 	Class Room 12
+5 	CE24101 	Environmental Sciences [2] 	Nidhi Singh 	NIS 	ED Hall 	Engg. Drawing Hall
+6 	CH24102 Lab 	Chemistry Lab [1] 	Rajni Agarwal 	RAJ 	EL-2 	Electronics Lab 2
+7 	EC24102 Lab 	Basic Electronics Lab [1] 	Ankur agarwal 	AKA 	D D Gupta 	DDG 	Mech. Ws 	Mech. Workhop
+8 	ME24102 Lab Engineering Graphics [2] 	Vikas Sangwan 	VKS
+9 	MC24104 Lab Creative Arts [1] 	CA Faculty2 	CA2
+10 	PE24102 Lab 	Workshop Practice [1] 	Abinash Pankaj 	ABP
+11 	MC24102 Lab NSS [1] 	NSS Facuity2 	NS2
+15 of 35
+BT AI3 	TT of B.Tech. Computer Science & Engg.-AI Sem- 3 	Ver- 1.0 wef : 01-Sep-2025
+45 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	EC24204 Lab 	EC24204 Lab 	MT24131 	CS24201 	EC24203 	MA24205
+Faculty 	PUS / UMS 	PUS / UMS 	ANS 	AJS 	PUS 	IKD
+Venue 	EL-3 / EL-3 	EL-3 / EL-3 	CR-07 	CR-07 	CR-11 	CR-11
+TUE
+Subject 	CS24205 	MT24131 	MA24205
+MC24204 Lab /
+MC24202 Lab
+MC24204 Lab /
+MC24202 Lab
+Faculty 	DHB 	ANS 	IKD 	DHB / NS4 	DHB / NS4
+Venue 	CR-12 	CR-11 	CR-11 	CR-08 / OD2 	CR-08 / OD2
+WED
+Subject 	EC24204 Lab 	EC24204 Lab 	MA24205 	CS24201 	AI24201 	EC24203
+Faculty 	PUS / UMS 	PUS / UMS 	IKD 	AJS 	IKD 	PUS
+Venue 	EL-3 / EL-3 	EL-3 / EL-3 	CR-04 	CR-04 	CR-06 	CR-06
+THU
+Subject 	CS24205 	AI24202 ss Lab 	AI24202 ss Lab 	AI24202 ss Lab 	AI24202 Th 	AI24201 	EC24203
+Faculty 	DHB 	VBP 	VBP 	VBP 	VBP 	IKD 	PUS
+Venue 	CR-04 	CL-2 	CL-2 	CL-2 	CR-05 	CR-05 	CR-05
+FRI
+Subject 	AI24201 	CS24201 	MT24131 	CS24205 	CS24202 Lab 	CS24202 Lab 	CS24202 Lab
+Faculty 	IKD 	AJS 	ANS 	DHB 	PTK 	PTK 	PTK
+Venue 	CR-06 	CR-06 	CR-06 	CR-06 	CL-1 	CL-1 	CL-1
+SAT
+Subject
+Faculty
+Venue
+Legend for BT AI3
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	CS24205 	Computer Organization and Architecture [3] 	Dheeraj Bhardwaj 	DHB 	CL-1 	Computer Lab 1
+2 	MA24205 	Discrete Mathematics [3] 	I K Dadheech 	IKD 	CL-2 	Computer Lab 2
+3 	EC24203 	Digital System Design [3] 	Puneet Sharma 	PUS 	CR-04 	Class Room 04
+4 	CS24201 	Data Structure and Algorithms [3] 	Anju Sharma 	AJS 	CR-05 	Class Room 05
+5 	AI24201 	Mathematics for AI-ML [3] 	I K Dadheech 	IKD 	CR-06 	Class Room 06
+6 	MT24131 	UHV -II Understanding Harmony [3] 	Anand Srivastava 	ANS 	CR-07 	Class Room 07
+7 	MC24204 Lab Creative Arts [1] 	Dheeraj Bhardwaj 	DHB 	CR-08 	Class Room 08
+8 	EC24204 Lab 	Digital System Design Lab [1] 	Puneet Sharma 	PUS 	Uma Sharnkar 	UMS 	CR-11 	Class Room 11
+9 	CS24202 Lab 	Data Structure and Algorithms Lab [1.5] 	Prateek Sharma 	PTK 	CR-12 	Class Room 12
+
+-- 9 of 25 --
+
+
+=== PAGE 10 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+10 	AI24202 Th 	Mathematics for AI-ML [1] 	Vishwambhar Pathak 	VBP 	EL-3 	Electronics Lab 3
+11 	MC24202 Lab NSS [1] 	NSS Facuity4 	NS4 	OD2 	Out door2
+12 AI24202 ss LabMathematics for AI-ML Lab [1.5] 	Vishwambhar Pathak 	VBP
+16 of 35
+BT AI5 	TT of B.Tech. Computer Science & Engg.-AI Sem- 5 	Ver- 1.0 wef : 01-Sep-2025
+36 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	IT334 Lab 	IT334 Lab 	IT334 Lab 	AI 203 	CS238 Lab 	CS238 Lab 	CS238 Lab
+Faculty 	MMA 	MMA 	MMA 	GSM 	BIP / TIJ 	BIP / TIJ 	BIP / TIJ
+Venue 	CL-3 	CL-3 	CL-3 	CR-02 	CL-3 / CL-3 	CL-3 / CL-3 	CL-3 / CL-3
+TUE
+Subject 	IT333 	AI363 	AI353
+Faculty 	RVK 	MAS 	SCG
+Venue 	CR-03 	CR-03 	CR-03
+WED
+Subject 	AI354 Lab 	AI354 Lab 	AI354 Lab 	IT333 	CS237 	AI363
+Faculty 	SCG 	SCG 	SCG 	RVK 	BIP 	MAS
+Venue 	CL-3 	CL-3 	CL-3 	CR-10 	CR-10 	CR-10
+THU
+Subject 	AI364 Lab 	AI364 Lab 	AI364 Lab 	CS237 	AI353 	AI 203
+Faculty 	MAS 	MAS 	MAS 	BIP 	SCG 	GSM
+Venue 	CL-3 	CL-3 	CL-3 	CR-04 	CR-04 	CR-04
+FRI
+Subject 	AI363 	AI 203 	IT333 	AI353 	CS237
+Faculty 	MAS 	GSM 	RVK 	SCG 	BIP
+Venue 	CR-04 	CR-04 	CR-04 	CR-12 	CR-12
+SAT
+Subject
+Faculty
+Venue
+Legend for BT AI5
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	IT333 	Data Comm.& Computer Networks [3] 	Ravindra Kumar 	RVK 	CL-3 	Computer Lab 3
+2 	CS237 	Database Management System [3] 	B Pathak 	BIP 	CR-02 	Class Room 02
+3 	AI363 	Introduction to Machine Learning [3] 	Madhavi Sinha 	MAS 	CR-03 	Class Room 03
+4 	AI 203 	Mathematics for Data Science [3] 	Gurminder Singh 	GSM 	CR-04 	Class Room 04
+5 	AI353 	Feature Engineering [3] 	Subhash Gupta 	SCG 	CR-10 	Class Room 10
+6 	MoocCSAI 	MOOC [3] 	B Pathak 	BIP 	CR-12 	Class Room 12
+7 	IT334 Lab 	Data Comm.& Computer Networks Lab [1.5] 	M M Agarwal 	MMA
+8 	CS238 Lab 	Database Management System lab [1.5] 	B Pathak 	BIP 	Tiju Thomas 	TIJ
+9 	AI364 Lab 	Machine Learning Lab [1.5] 	Madhavi Sinha 	MAS
+10 	AI354 Lab 	Feature Engineering Lab [1.5] 	Subhash Gupta 	SCG
+17 of 35
+BT CSE3A 	TT of B.Tech. Computer Science & Engg. Sem- 3 Sec- A 	Ver- 1.0 wef : 01-Sep-2025
+61 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	MA24205 	CS24202 Lab 	CS24202 Lab 	CS24202 Lab 	EC24203 	CS24204 Th
+Faculty 	BHA 	PTK 	PTK 	PTK 	GAJ 	PNG
+Venue 	CR-11 	CL-1 	CL-1 	CL-1 	CR-11 	CR-12
+TUE
+Subject 	CS24205 	CS24201 	CS24203
+MC24204 Lab /
+MC24202 Lab
+MC24204 Lab /
+MC24202 Lab 	EC24204 Lab 	EC24204 Lab
+Faculty 	DHB 	PNG 	GSM 	NIS / NS3 	NIS / NS3 	GAJ / UMS 	GAJ / UMS
+Venue 	CR-07 	CR-07 	CR-07 	CR-06 / OD1 	CR-06 / OD1 	EL-3 / EL-3 	EL-3 / EL-3
+WED
+Subject 	EC24203 	CS24201 	MT24131 	CS24203 	EC24204 Lab 	EC24204 Lab
+Faculty 	GAJ 	PNG 	ANS 	GSM 	GAJ / UMS 	GAJ / UMS
+Venue 	CR-07 	CR-07 	CR-07 	CR-07 	EL-3 / EL-3 	EL-3 / EL-3
+THU
+Subject 	MT24131 	CS24201 	MA24205 	CS24203 	EC24203 	CS24205
+Faculty 	ANS 	PNG 	BHA 	GSM 	GAJ 	DHB
+Venue 	CR-12 	CR-12 	CR-12 	CR-12 	CR-07 	CR-07
+FRI
+Subject 	CS24204 ss Lab 	CS24204 ss Lab 	CS24204 ss Lab 	MA24205 	CS24205 	MT24131
+Faculty 	PNG 	PNG 	PNG 	BHA 	DHB 	ANS
+Venue 	CL-2 	CL-2 	CL-2 	CR-07 	CR-07 	CR-07
+SAT
+Subject
+Faculty
+Venue
+Legend for BT CSE3A
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	CS24205 	Computer Organization and Architecture [3] 	Dheeraj Bhardwaj 	DHB 	CL-1 	Computer Lab 1
+
+-- 10 of 25 --
+
+
+=== PAGE 11 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+2 	MA24205 	Discrete Mathematics [3] 	Bhawna Agarwal 	BHA 	CL-2 	Computer Lab 2
+3 	EC24203 	Digital System Design [3] 	Gaurav Jain 	GAJ 	CR-06 	Class Room 06
+4 	CS24201 	Data Structure and Algorithms [3] 	Pankaj Gupta 	PNG 	CR-07 	Class Room 07
+5 	CS24203 	Mathematics for Computer Science [3] 	Gurminder Singh 	GSM 	CR-11 	Class Room 11
+6 	MT24131 	UHV -II Understanding Harmony [3] 	Anand Srivastava 	ANS 	CR-12 	Class Room 12
+7 	MC24204 Lab Creative Arts [1] 	Nidhi Singh 	NIS 	EL-3 	Electronics Lab 3
+8 	EC24204 Lab 	Digital System Design Lab [1] 	Gaurav Jain 	GAJ 	Uma Sharnkar 	UMS 	OD1 	Out door1
+9 	CS24202 Lab 	Data Structure and Algorithms Lab [1.5] 	Prateek Sharma 	PTK
+10 	CS24204 Th 	IT Workshop Th [1] 	Pankaj Gupta 	PNG
+11 	MC24202 Lab NSS [1] 	NSS Facuity3 	NS3
+12 CS24204 ss LabIT Workshop Lab [1.5] 	Pankaj Gupta 	PNG
+18 of 35
+BT CSE3B 	TT of B.Tech. Computer Science & Engg. Sem- 3 Sec- B 	Ver- 1.0 wef : 01-Sep-2025
+62 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	CS24204 ss Lab 	CS24204 ss Lab 	CS24204 ss Lab 	CS24201 	MA24205 	EC24204 Lab 	EC24204 Lab
+Faculty 	SEG 	SEG 	SEG 	MMA 	BHA 	SNE / UMS 	SNE / UMS
+Venue 	CL-2 	CL-2 	CL-2 	CR-08 	CR-08 	EL-3 / EL-3 	EL-3 / EL-3
+TUE
+Subject 	EC24 203 	CS24203 	CS24205
+MC24204 Lab /
+MC24202 Lab
+MC24204 Lab /
+MC24202 Lab
+Faculty 	GAJ 	GSM 	DHB 	DHB / NS4 	DHB / NS4
+Venue 	CR-08 	CR-08 	CR-08 	CR-08 / OD2 	CR-08 / OD2
+WED
+Subject 	CS24201 	CS24203 	MT24131 	CS24204 Th 	EC24 203 	MA24205 	CS24205
+Faculty 	MMA 	GSM 	ANS 	SEG 	GAJ 	BHA 	DHB
+Venue 	CR-11 	CR-11 	CR-11 	CR-11 	CR-11 	CR-11 	CR-11
+THU
+Subject 	CS24202 Lab 	CS24202 Lab 	CS24202 Lab 	CS24205 	MT24131 	MA24205 	EC24 203
+Faculty 	PTK 	PTK 	PTK 	DHB 	ANS 	BHA 	GAJ
+Venue 	CL-1 	CL-1 	CL-1 	CR-12 	CR-12 	CR-12 	CR-08
+FRI
+Subject 	MT24131 	CS24203 	CS24201 	EC24204 Lab 	EC24204 Lab
+Faculty 	ANS 	GSM 	MMA 	SNE / UMS 	SNE / UMS
+Venue 	CR-06 	CR-06 	CR-06 	EL-3 / EL-3 	EL-3 / EL-3
+SAT
+Subject
+Faculty
+Venue
+Legend for BT CSE3B
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	CS24205 	Computer Organization and Architecture [3] 	Dheeraj Bhardwaj 	DHB 	CL-1 	Computer Lab 1
+2 	MA24205 	Discrete Mathematics [3] 	Bhawna Agarwal 	BHA 	CL-2 	Computer Lab 2
+3 	EC24 203 	Digital System Design [3] 	Gaurav Jain 	GAJ 	CR-06 	Class Room 06
+4 	CS24201 	Data Structure and Algorithms [3] 	M M Agarwal 	MMA 	CR-08 	Class Room 08
+5 	CS24203 	Mathematics for Computer Science [3] 	Gurminder Singh 	GSM 	CR-11 	Class Room 11
+6 	MT24131 	UHV -II Understanding Harmony [3] 	Anand Srivastava 	ANS 	CR-12 	Class Room 12
+7 	MC24204 Lab Creative Arts [1] 	Dheeraj Bhardwaj 	DHB 	EL-3 	Electronics Lab 3
+8 	EC24204 Lab 	Digital System Design Lab [1] 	Snehanshu Shekhar 	SNE 	Uma Sharnkar 	UMS 	OD2 	Out door2
+9 	CS24202 Lab 	Data Structure and Algorithms Lab [1.5] 	Prateek Sharma 	PTK
+10 	CS24204 Th 	IT Workshop Th [1] 	Seema Gaur 	SEG
+11 	MC24202 Lab NSS [1] 	NSS Facuity4 	NS4
+12 CS24204 ss LabIT Workshop Lab [1.5] 	Seema Gaur 	SEG
+19 of 35
+BT CSE5A 	TT of B.Tech. Computer Science & Engg. Sem- 5 Sec- A 	Ver- 1.0 wef : 01-Sep-2025
+60 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	IT351 	IT338 Lab 	IT338 Lab 	IT338 Lab 	IT333
+Faculty 	BIP 	PYG 	PYG 	PYG 	RVK
+Venue 	CR-11 	CL-2 	CL-2 	CL-2 	CR-11
+TUE
+Subject 	IT333 	IT351 	IT335 	CS331
+Faculty 	RVK 	BIP 	PNG 	JIG
+Venue 	CR-12 	CR-12 	CR-12 	CR-12
+WED
+Subject 	CS331 	IT335 	IT351 	IT337 	IT336 Lab 	IT336 Lab 	IT336 Lab
+Faculty 	JIG 	PNG 	BIP 	PYG 	PNG 	PNG 	PNG
+Venue 	CR-12 	CR-12 	CR-12 	CR-12 	CL-2 	CL-2 	CL-2
+THU
+Subject 	IT337 	CS331 	IT335 	IT334 Lab 	IT334 Lab 	IT334 Lab
+Faculty 	PYG 	JIG 	PNG 	JIG 	JIG 	JIG
+Venue 	CR-08 	CR-08 	CR-08 	CL-1 	CL-1 	CL-1
+FRI
+Subject 	IT333 	IT337 	CS332 Lab 	CS332 Lab 	CS332 Lab
+Faculty 	RVK 	PYG 	SKA / KUB 	SKA / KUB 	SKA / KUB
+Venue 	CR-12 	CR-12 	CL-1 / CL-1 	CL-1 / CL-1 	CL-1 / CL-1
+
+-- 11 of 25 --
+
+
+=== PAGE 12 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+SAT
+Subject
+Faculty
+Venue
+Legend for BT CSE5A
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	IT333 	Data Comm.& Computer Networks [3] 	Ravindra Kumar 	RVK 	CL-1 	Computer Lab 1
+2 	CS331 	Formal Language and Automata Theory [3] 	Jitendra Goyal 	JIG 	CL-2 	Computer Lab 2
+3 	IT335 	Data Mining Concepts and Techniques [3] 	Pankaj Gupta 	PNG 	CR-08 	Class Room 08
+4 	IT351 	Natural Language Processing [3] 	B Pathak 	BIP 	CR-11 	Class Room 11
+5 	IT337 	Software Engineering [3] 	Piyush Gupta 	PYG 	CR-12 	Class Room 12
+6 	MoocCS5A 	MOOC [3] 	B Pathak 	BIP
+7 	IT334 Lab 	DCCN Lab [1.5] 	Jitendra Goyal 	JIG
+8 	CS332 Lab 	Basic IT Workshop [1.5] 	Santosh Kr. Agarwal 	SKA 	Kutubuddin Beg 	KUB
+9 	IT336 Lab 	Data Mining Lab [1.5] 	Pankaj Gupta 	PNG
+10 	IT338 Lab 	Software Engineering & Testing Lab [1.5] 	Piyush Gupta 	PYG
+20 of 35
+BT CSE5B 	TT of B.Tech. Computer Science & Engg. Sem- 5 Sec- B 	Ver- 1.0 wef : 01-Sep-2025
+60 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject 	IT333 	IT337 	CS332 Lab 	CS332 Lab 	CS332 Lab
+Faculty 	RVK 	ABM 	SPV / KUB 	SPV / KUB 	SPV / KUB
+Venue 	CR-08 	CR-08 	CL-1 / CL-1 	CL-1 / CL-1 	CL-1 / CL-1
+TUE
+Subject 	IT335 	CS331 	IT338 Lab 	IT338 Lab 	IT338 Lab
+Faculty 	SEG 	SMJ 	ABM 	ABM 	ABM
+Venue 	CR-05 	CR-05 	CL-2 	CL-2 	CL-2
+WED
+Subject 	CS331 	IT335 	IT337 	IT351 	IT334 Lab 	IT334 Lab 	IT334 Lab
+Faculty 	SMJ 	SEG 	ABM 	MMA 	MMA 	MMA 	MMA
+Venue 	CR-09 	CR-09 	CR-09 	CR-09 	CL-1 	CL-1 	CL-1
+THU
+Subject 	IT351 	IT333 	IT336 Lab 	IT336 Lab 	IT336 Lab
+Faculty 	MMA 	RVK 	SEG 	SEG 	SEG
+Venue 	CR-11 	CR-11 	CL-2 	CL-2 	CL-2
+FRI
+Subject 	CS331 	IT337 	IT351 	IT335 	IT333
+Faculty 	SMJ 	ABM 	MMA 	SEG 	RVK
+Venue 	CR-11 	CR-11 	CR-11 	CR-09 	CR-09
+SAT
+Subject
+Faculty
+Venue
+Legend for BT CSE5B
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	IT333 	Data Comm.& Computer Networks [3] 	Ravindra Kumar 	RVK 	CL-1 	Computer Lab 1
+2 	CS331 	Formal Language and Automata Theory [3] 	Smitha Jha 	SMJ 	CL-2 	Computer Lab 2
+3 	IT335 	Data Mining Concepts and Techniques [3] 	Seema Gaur 	SEG 	CR-05 	Class Room 05
+4 	IT351 	Natural Language Processing [3] 	M M Agarwal 	MMA 	CR-08 	Class Room 08
+5 	IT337 	Software Engineering [3] 	Archana Bhatnagar 	ABM 	CR-09 	Class Room 09
+6 	MoocCS5B 	MOOC [3] 	B Pathak 	BIP 	CR-11 	Class Room 11
+7 	IT334 Lab 	DCCN Lab [1.5] 	M M Agarwal 	MMA
+8 	CS332 Lab 	Basic IT Workshop [1.5] 	Shripal Vijayvargiya 	SPV 	Kutubuddin Beg 	KUB
+9 	IT336 Lab 	Data Mining Lab [1.5] 	Seema Gaur 	SEG
+10 	IT338 Lab 	Software Engineering & Testing Lab [1.5] 	Archana Bhatnagar 	ABM
+21 of 35
+BT CSE7A 	TT of B.Tech. Computer Science & Engg. Sem- 7 Sec- A 	Ver- 1.0 wef : 01-Sep-2025
+56 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject
+Faculty
+Venue
+TUE
+Subject
+CS438 Lab /
+CS436 Lab
+CS438 Lab /
+CS436 Lab
+CS438 Lab /
+CS436 Lab
+Faculty 	VBP / JIG 	VBP / JIG 	VBP / JIG
+Venue 	CL-3 / CL-1 	CL-3 / CL-1 	CL-3 / CL-1
+WED
+Subject 	IT348 Lab 	IT348 Lab 	IT348 Lab 	CS437 / CS435 	IT347
+
+-- 12 of 25 --
+
+
+=== PAGE 13 ===
+BIRLA INSTITUTE OF TECHNOLOGY, MESRA
+OFF - CAMPUS JAIPUR
+TIME TABLE SESSION : MO-25 	Effective from : 01-Sep-2025
+WED
+Faculty 	VIG 	VIG 	VIG 	VBP / JIG 	VIG
+Venue 	CL-2 	CL-2 	CL-2 	CR-10 / CR-13 	CR-04
+THU
+Subject
+Faculty
+Venue
+FRI
+Subject 	IT347 	IT347 	CS437 / CS435 	CS437 / CS435
+Faculty 	VIG 	VIG 	VBP / JIG 	VBP / JIG
+Venue 	CR-11 	CR-11 	CR-11 / CR-08 	CR-11 / CR-08
+SAT
+Subject
+Faculty
+Venue
+Legend for BT CSE7A
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MoocCS7A 	MOOC [3] 	Faculty not required 	FNR 	CL-1 	Computer Lab 1
+2 	CS435 	Frontend Design [3] 	Jitendra Goyal 	JIG 	CL-2 	Computer Lab 2
+3 	IT347 	Cloud Computing [3] 	Vivek Gaur 	VIG 	CL-3 	Computer Lab 3
+4 	CS436 Lab 	Frontend Design Lab [1.5] 	Jitendra Goyal 	JIG 	CR-04 	Class Room 04
+5 	IT348 Lab 	Cloud Computing Lab [1.5] 	Vivek Gaur 	VIG 	CR-08 	Class Room 08
+6 	CS 400M 	Minor Project [3] 	Vivek Gaur 	VIG 	CR-10 	Class Room 10
+7 	CS437 	Deep Learning [3] 	Vishwambhar Pathak 	VBP 	CR-11 	Class Room 11
+8 	CS438 Lab 	Deep Learning Lab [1.5] 	Vishwambhar Pathak 	VBP 	CR-13 	Class Room 13
+22 of 35
+BT CSE7B 	TT of B.Tech. Computer Science & Engg. Sem- 7 Sec- B 	Ver- 1.0 wef : 01-Sep-2025
+55 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+Days 	Timing--> 	9 - 9:50 	10 - 10:50 	11 - 11:50 	12 - 12:50 	1 - 1:50 	2 - 2:50 	3 - 3:50 	4 - 4:50 	5 - 5:50 	6 - 6:50
+MON
+Subject
+Faculty
+Venue
+TUE
+Subject
+CS438 Lab /
+CS436 Lab
+CS438 Lab /
+CS436 Lab
+CS438 Lab /
+CS436 Lab 	IT347
+Faculty 	VBP / SKA 	VBP / SKA 	VBP / SKA 	PYG
+Venue 	CL-3 / CL-2 	CL-3 / CL-2 	CL-3 / CL-2 	CR-11
+WED
+Subject 	IT348 Lab 	IT348 Lab 	IT348 Lab 	CS437 / CS435
+Faculty 	PYG / TIJ 	PYG / TIJ 	PYG / TIJ 	VBP / SKA
+Venue 	CL-1 / CL-1 	CL-1 / CL-1 	CL-1 / CL-1 	CR-10 / CR-11
+THU
+Subject
+Faculty
+Venue
+FRI
+Subject 	IT347 	IT347 	CS437 / CS435 	CS437 / CS435
+Faculty 	PYG 	PYG 	VBP / SKA 	VBP / SKA
+Venue 	CR-08 	CR-08 	CR-11 / CR-09 	CR-11 / CR-09
+SAT
+Subject
+Faculty
+Venue
+Legend for BT CSE7B
+S.No.
+Subject 	Teacher 	Venue Legend
+Code 	Name [Credits] 	Main Faculty Name 	Code 	Add. Fac. Name 	Code 	Venu Code 	Venu Name
+1 	MoocCS7B 	MOOC [3] 	Faculty not required 	FNR 	CL-1 	Computer Lab 1
+2 	CS435 	Frontend Design [3] 	Santosh Kr. Agarwal 	SKA 	CL-2 	Computer Lab 2
+3 	IT347 	Cloud Computing [3] 	Piyush Gupta 	PYG 	CL-3 	Computer Lab 3
+4 	CS436 Lab 	Frontend Design Lab [1.5] 	Santosh Kr. Agarwal 	SKA 	CR-08 	Class Room 08
+5 	IT348 Lab 	Cloud Computing Lab [1.5] 	Piyush Gupta 	PYG 	Tiju Thomas 	TIJ 	CR-09 	Class Room 09
+6 	CS 400M 	Minor Project [3] 	Subhash Gupta 	SCG 	CR-10 	Class Room 10
+7 	CS437 	Deep Learning [3] 	Vishwambhar Pathak 	VBP 	CR-11 	Class Room 11
+8 	CS438 Lab 	Deep Learning Lab [1.5] 	Vishwambhar Pathak 	VBP
+23 of 35
+BT ECE3 	TT of B.Tech. Electronics and Communication Engg. Sem- 3 	Ver- 1.0 wef : 01-Sep-2025
+27 	Pd. No.-> 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10
+
+-- 13 of 25 --
+

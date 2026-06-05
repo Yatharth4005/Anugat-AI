@@ -96,7 +96,7 @@ facultyRouter.patch('/:id', adminOnly, async (req: Request, res: Response, next:
   try {
     const data = updateFacultySchema.parse(req.body);
     const faculty = await prisma.faculty.update({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       data,
       select: { id: true, name: true, email: true, role: true, initials: true, departmentId: true },
     });
@@ -110,7 +110,7 @@ facultyRouter.patch('/:id', adminOnly, async (req: Request, res: Response, next:
 facultyRouter.delete('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const faculty = await prisma.faculty.update({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       data: { deletedAt: new Date(), status: 'ARCHIVED' },
     });
     res.json({ success: true, message: 'Faculty member archived. Recoverable within 30 days.' });
@@ -122,14 +122,14 @@ facultyRouter.delete('/:id', adminOnly, async (req: Request, res: Response, next
 // POST /api/faculty/:id/restore
 facultyRouter.post('/:id/restore', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const faculty = await prisma.faculty.findUnique({ where: { id: req.params['id'] } });
+    const faculty = await prisma.faculty.findUnique({ where: { id: req.params['id'] as string } });
     if (!faculty?.deletedAt) throw new AppError(400, 'Faculty member is not archived');
 
     const daysSinceDelete = (Date.now() - faculty.deletedAt.getTime()) / (1000 * 60 * 60 * 24);
     if (daysSinceDelete > 30) throw new AppError(400, 'Recovery window expired (30 days)');
 
     await prisma.faculty.update({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       data: { deletedAt: null, status: 'ACTIVE' },
     });
     res.json({ success: true, message: 'Faculty member restored' });
@@ -147,7 +147,8 @@ facultyRouter.post('/import/preview', adminOnly, upload.single('file'), async (r
 
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
-      const email = row['email'] || row['Email'] || row['EMAIL'];
+      const rawEmail = row['email'] || row['Email'] || row['EMAIL'];
+      const email = rawEmail ? String(rawEmail) : undefined;
       const existing = email ? await prisma.faculty.findUnique({ where: { email } }) : null;
 
       preview.push({

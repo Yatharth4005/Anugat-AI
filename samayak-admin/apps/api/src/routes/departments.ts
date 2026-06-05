@@ -66,7 +66,7 @@ departmentsRouter.get('/', async (req: Request, res: Response, next: NextFunctio
 departmentsRouter.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const dept = await prisma.department.findUnique({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       include: {
         branches: { orderBy: [{ semester: 'asc' }, { section: 'asc' }] },
         _count: { select: { rooms: true, faculty: true } },
@@ -95,7 +95,7 @@ departmentsRouter.patch('/:id', adminOnly, async (req: Request, res: Response, n
   try {
     const data = updateDeptSchema.parse(req.body);
     const dept = await prisma.department.update({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       data,
     });
     res.json({ success: true, data: dept });
@@ -107,7 +107,7 @@ departmentsRouter.patch('/:id', adminOnly, async (req: Request, res: Response, n
 // DELETE /api/departments/:id
 departmentsRouter.delete('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const id = req.params['id'];
+    const id = req.params['id'] as string;
 
     // Check for dependent records
     const counts = await prisma.department.findUnique({
@@ -119,15 +119,16 @@ departmentsRouter.delete('/:id', adminOnly, async (req: Request, res: Response, 
 
     if (!counts) throw new AppError(404, 'Department not found');
 
-    const totalDeps = counts._count.branches + counts._count.rooms + counts._count.faculty;
+    const countsAny = counts as any;
+    const totalDeps = countsAny._count.branches + countsAny._count.rooms + countsAny._count.faculty;
     if (totalDeps > 0 && !req.query['force']) {
       res.status(409).json({
         success: false,
         error: 'Department has dependent records',
         details: {
-          branches: counts._count.branches,
-          rooms: counts._count.rooms,
-          faculty: counts._count.faculty,
+          branches: countsAny._count.branches,
+          rooms: countsAny._count.rooms,
+          faculty: countsAny._count.faculty,
           total: totalDeps,
         },
         hint: 'Add ?force=true to delete all dependent records',
@@ -156,7 +157,7 @@ departmentsRouter.post('/import', adminOnly, upload.single('file'), async (req: 
       try {
         const data = createDeptSchema.parse({
           name: row['name'] || row['Name'] || row['DEPARTMENT NAME'],
-          shortCode: (row['shortCode'] || row['Short Code'] || row['CODE'] || '').toUpperCase(),
+          shortCode: String(row['shortCode'] || row['Short Code'] || row['CODE'] || '').toUpperCase(),
         });
 
         await prisma.department.upsert({

@@ -57,7 +57,7 @@ roomsRouter.get('/', async (req: Request, res: Response, next: NextFunction) => 
 roomsRouter.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const room = await prisma.room.findUnique({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       include: { department: true },
     });
     if (!room) throw new AppError(404, 'Room not found');
@@ -83,7 +83,7 @@ roomsRouter.post('/', adminOnly, async (req: Request, res: Response, next: NextF
 roomsRouter.patch('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const data = updateRoomSchema.parse(req.body);
-    const room = await prisma.room.update({ where: { id: req.params['id'] }, data });
+    const room = await prisma.room.update({ where: { id: req.params['id'] as string }, data });
     await invalidateAnalyticsCache();
     res.json({ success: true, data: room });
   } catch (err) {
@@ -94,7 +94,7 @@ roomsRouter.patch('/:id', adminOnly, async (req: Request, res: Response, next: N
 // DELETE /api/rooms/:id
 roomsRouter.delete('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const slotCount = await prisma.timetableSlot.count({ where: { roomId: req.params['id'] } });
+    const slotCount = await prisma.timetableSlot.count({ where: { roomId: req.params['id'] as string } });
     if (slotCount > 0 && !req.query['force']) {
       res.status(409).json({
         success: false,
@@ -103,9 +103,9 @@ roomsRouter.delete('/:id', adminOnly, async (req: Request, res: Response, next: 
       return;
     }
     if (slotCount > 0) {
-      await prisma.timetableSlot.updateMany({ where: { roomId: req.params['id'] }, data: { roomId: null } });
+      await prisma.timetableSlot.updateMany({ where: { roomId: req.params['id'] as string }, data: { roomId: null } });
     }
-    await prisma.room.delete({ where: { id: req.params['id'] } });
+    await prisma.room.delete({ where: { id: req.params['id'] as string } });
     await invalidateAnalyticsCache();
     res.json({ success: true, message: 'Room deleted' });
   } catch (err) {

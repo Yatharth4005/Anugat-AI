@@ -4,7 +4,7 @@ import { PDF_INGESTION_QUEUE, ANALYTICS_QUEUE } from './lib/queues';
 import { redis } from './lib/redis';
 import { prisma } from './lib/prisma';
 import { logger } from './lib/logger';
-import { parsePdfTimetable } from './services/pdfParser';
+import { parsePdfTimetable, extractFacultyFromTeacherString } from './services/pdfParser';
 import { computeAnalytics, invalidateAnalyticsCache } from './services/analytics';
 import { Day, Period, PERIOD_TIMES, CourseType, RoomType, EntityStatus } from '@samayak/types';
 import bcrypt from 'bcryptjs';
@@ -52,205 +52,218 @@ const pdfWorker = new Worker(
         summary: '',
       };
 
-      // ── 2a: Department ────────────────────────────────────────────────────
-      const deptName = parsed.departmentName || 'Unknown Department';
-      const deptShortCode = inferShortCode(deptName);
+      // Pre-compute bcrypt password hash outside transaction
+      const passwordHash = await bcrypt.hash('Samayak@2024', 12);
 
-      let department = await prisma.department.findFirst({
-        where: { OR: [{ shortCode: deptShortCode }, { name: { contains: deptName, mode: 'insensitive' } }] },
-      });
+      await prisma.$transaction(async (tx) => {
+        // ── 2a: Department ────────────────────────────────────────────────────
+        const deptName = parsed.departmentName || 'Unknown Department';
+        const deptShortCode = inferShortCode(deptName);
 
-      if (!department) {
-        department = await prisma.department.create({ data: { name: deptName, shortCode: deptShortCode } });
-        result.created.departments++;
-      } else {
-        result.matched.departments++;
-      }
-
-      await updateProgress(70, 'Department matched. Processing faculty...');
-
-      // ── 2b: Faculty ───────────────────────────────────────────────────────
-      const facultyMap = new Map<string, string>(); // initials → id
-
-      for (const pf of parsed.faculty) {
-        const email = `${pf.initials.toLowerCase()}@samayak.edu`;
-        let faculty = await prisma.faculty.findFirst({
-          where: { OR: [{ initials: pf.initials }, { email }] },
+        let department = await tx.department.findFirst({
+          where: { OR: [{ shortCode: deptShortCode }, { name: { contains: deptName, mode: 'insensitive' } }] },
         });
 
-        if (!faculty) {
-          const passwordHash = await bcrypt.hash('Samayak@2024', 12);
-          faculty = await prisma.faculty.create({
-            data: {
-              name: pf.fullName,
-              email,
-              passwordHash,
-              role: 'PROFESSOR',
-              departmentId: department.id,
-              initials: pf.initials,
-            },
-          });
-          result.created.faculty++;
+        if (!department) {
+          department = await tx.department.create({ data: { name: deptName, shortCode: deptShortCode } });
+          result.created.departments++;
         } else {
-          result.matched.faculty++;
-        }
-        facultyMap.set(pf.initials, faculty.id);
-      }
-
-      await updateProgress(75, 'Faculty processed. Processing rooms...');
-
-      // ── 2c: Rooms (extracted from cell room identifiers) ────────────────
-      const allRoomStrings = new Set<string>();
-      for (const row of parsed.rows) {
-        for (const [, cell] of row.slots) {
-          if (cell.roomId) allRoomStrings.add(cell.roomId.trim());
-        }
-      }
-
-      const roomMap = new Map<string, string>(); // room string → DB id
-
-      for (const roomStr of allRoomStrings) {
-        const isLab = /lab/i.test(roomStr);
-        const type: RoomType = isLab ? RoomType.LAB : RoomType.CLASSROOM;
-
-        let room = await prisma.room.findFirst({
-          where: { number: { equals: roomStr, mode: 'insensitive' }, departmentId: department.id },
-        });
-
-        if (!room) {
-          room = await prisma.room.create({
-            data: { number: roomStr, type, departmentId: department.id, capacity: null, status: 'PENDING' },
-          });
-          result.created.rooms++;
-        } else {
-          result.matched.rooms++;
-        }
-        roomMap.set(roomStr, room.id);
-      }
-
-      await updateProgress(80, 'Rooms processed. Processing branches and courses...');
-
-      // ── 2d: Branches + Courses + Timetable Slots ─────────────────────────
-      for (const row of parsed.rows) {
-        // Upsert branch
-        let branch = await prisma.branch.findFirst({
-          where: {
-            departmentId: department.id,
-            semester: row.semester,
-            section: row.section.includes('-') ? row.section.split('-').pop() ?? 'A' : row.section,
-          },
-        });
-
-        if (!branch) {
-          branch = await prisma.branch.create({
-            data: {
-              name: `${row.branch} Sem ${row.semester} - Section ${row.section.split('-').pop() ?? 'A'}`,
-              semester: row.semester,
-              section: row.section.split('-').pop() ?? 'A',
-              departmentId: department.id,
-            },
-          });
-          result.created.branches++;
-        } else {
-          result.matched.branches++;
+          result.matched.departments++;
         }
 
-        // Process courses from parsed course list for this branch
-        const courseMap = new Map<string, string>(); // code → id
+        // ── 2b: Faculty ───────────────────────────────────────────────────────
+        const facultyMap = new Map<string, string>(); // initials → id
 
-        for (const pc of parsed.courses) {
-          let course = await prisma.course.findFirst({
-            where: { code: pc.code, branchId: branch.id },
+        for (const pf of parsed.faculty) {
+          const email = `${pf.initials.toLowerCase()}@samayak.edu`;
+          let faculty = await tx.faculty.findFirst({
+            where: { OR: [{ initials: pf.initials }, { email }] },
           });
 
-          if (!course) {
-            course = await prisma.course.create({
+          if (!faculty) {
+            faculty = await tx.faculty.create({
               data: {
-                code: pc.code,
-                name: pc.name,
-                credits: pc.credits,
-                type: pc.type,
-                branchId: branch.id,
+                name: pf.fullName,
+                email,
+                passwordHash,
+                role: 'PROFESSOR',
+                departmentId: department.id,
+                initials: pf.initials,
               },
             });
-            result.created.courses++;
+            result.created.faculty++;
           } else {
-            result.matched.courses++;
+            result.matched.faculty++;
           }
-          courseMap.set(pc.code, course.id);
+          facultyMap.set(pf.initials, faculty.id);
         }
 
-        // Process timetable slots
-        for (const [key, cell] of row.slots) {
-          if (cell.isFree || !cell.courseCode) continue;
+        // ── 2c: Rooms (extracted from cell room identifiers) ────────────────
+        const allRoomStrings = new Set<string>();
+        for (const row of parsed.rows) {
+          for (const [, cell] of row.slots) {
+            if (cell.roomId) allRoomStrings.add(cell.roomId.trim());
+          }
+        }
 
-          const [dayStr, periodStr] = key.split('_') as [Day, Period];
-          const periodTime = PERIOD_TIMES[periodStr];
-          if (!periodTime) continue;
+        const roomMap = new Map<string, string>(); // room string → DB id
 
-          // Find or infer course
-          let courseId = courseMap.get(cell.courseCode ?? '');
+        for (const roomStr of allRoomStrings) {
+          const isLab = /lab/i.test(roomStr);
+          const type: RoomType = isLab ? RoomType.LAB : RoomType.CLASSROOM;
 
-          if (!courseId && cell.courseCode) {
-            // Course not in course list — create with minimal info
-            let course = await prisma.course.findFirst({
-              where: { code: cell.courseCode, branchId: branch.id },
+          let room = await tx.room.findFirst({
+            where: { number: { equals: roomStr, mode: 'insensitive' }, departmentId: department.id },
+          });
+
+          if (!room) {
+            room = await tx.room.create({
+              data: { number: roomStr, type, departmentId: department.id, capacity: null, status: 'PENDING' },
             });
+            result.created.rooms++;
+          } else {
+            result.matched.rooms++;
+          }
+          roomMap.set(roomStr, room.id);
+        }
+
+        // ── 2d: Branches + Courses + Timetable Slots ─────────────────────────
+        for (const row of parsed.rows) {
+          // Upsert branch
+          let branch = await tx.branch.findFirst({
+            where: {
+              departmentId: department.id,
+              semester: row.semester,
+              section: row.section.includes('-') ? row.section.split('-').pop() ?? 'A' : row.section,
+            },
+          });
+
+          if (!branch) {
+            branch = await tx.branch.create({
+              data: {
+                name: `${row.branch} Sem ${row.semester} - Section ${row.section.split('-').pop() ?? 'A'}`,
+                semester: row.semester,
+                section: row.section.split('-').pop() ?? 'A',
+                departmentId: department.id,
+              },
+            });
+            result.created.branches++;
+          } else {
+            result.matched.branches++;
+          }
+
+          // Process courses from parsed course list for this branch
+          const courseMap = new Map<string, string>(); // code → id
+
+          for (const pc of parsed.courses) {
+            let course = await tx.course.findFirst({
+              where: { code: pc.code, branchId: branch.id },
+            });
+
             if (!course) {
-              course = await prisma.course.create({
+              course = await tx.course.create({
                 data: {
-                  code: cell.courseCode,
-                  name: cell.courseCode, // name unknown
-                  credits: 0,
-                  type: cell.isLab ? CourseType.LAB : CourseType.LECTURE,
+                  code: pc.code,
+                  name: pc.name,
+                  credits: pc.credits,
+                  type: pc.type,
                   branchId: branch.id,
-                  status: 'PENDING',
                 },
               });
               result.created.courses++;
+            } else {
+              result.matched.courses++;
             }
-            courseId = course.id;
-            courseMap.set(cell.courseCode, courseId);
-          }
+            courseMap.set(pc.code, course.id);
 
-          const roomDbId = cell.roomId ? roomMap.get(cell.roomId) ?? null : null;
-
-          // Upsert slot
-          await prisma.timetableSlot.upsert({
-            where: { day_period_branchId: { day: dayStr, period: periodStr, branchId: branch.id } },
-            create: {
-              day: dayStr,
-              period: periodStr,
-              startTime: periodTime.start,
-              endTime: periodTime.end,
-              roomId: roomDbId,
-              courseId: courseId ?? null,
-              branchId: branch.id,
-            },
-            update: {
-              roomId: roomDbId,
-              courseId: courseId ?? null,
-            },
-          });
-
-          // Link faculty to course
-          if (cell.facultyInitials && courseId) {
-            const initials = cell.facultyInitials.split('+');
-            for (const initial of initials) {
-              const facultyId = facultyMap.get(initial.trim());
+            // Link faculty parsed from this course line (pc.coordinator)
+            const courseFaculty = extractFacultyFromTeacherString(pc.coordinator);
+            for (const cf of courseFaculty) {
+              const facultyId = facultyMap.get(cf.initials);
               if (facultyId) {
-                await prisma.facultyCourse.upsert({
-                  where: { facultyId_courseId: { facultyId, courseId } },
-                  create: { facultyId, courseId },
+                await tx.facultyCourse.upsert({
+                  where: { facultyId_courseId: { facultyId, courseId: course.id } },
+                  create: { facultyId, courseId: course.id },
                   update: {},
                 });
               }
             }
           }
 
-          result.created.slots++;
+          // Process timetable slots
+          for (const [key, cell] of row.slots) {
+            if (cell.isFree || !cell.courseCode) continue;
+
+            const [dayStr, periodStr] = key.split('_') as [Day, Period];
+            const periodTime = PERIOD_TIMES[periodStr];
+            if (!periodTime) continue;
+
+            // Find or infer course
+            let courseId = courseMap.get(cell.courseCode ?? '');
+
+            if (!courseId && cell.courseCode) {
+              // Course not in course list — create with minimal info
+              let course = await tx.course.findFirst({
+                where: { code: cell.courseCode, branchId: branch.id },
+              });
+              if (!course) {
+                course = await tx.course.create({
+                  data: {
+                    code: cell.courseCode,
+                    name: cell.courseCode, // name unknown
+                    credits: 0,
+                    type: cell.isLab ? CourseType.LAB : CourseType.LECTURE,
+                    branchId: branch.id,
+                    status: 'PENDING',
+                  },
+                });
+                result.created.courses++;
+              }
+              courseId = course.id;
+              courseMap.set(cell.courseCode, courseId);
+            }
+
+            const roomDbId = cell.roomId ? roomMap.get(cell.roomId) ?? null : null;
+
+            // Upsert slot
+            await tx.timetableSlot.upsert({
+              where: { day_period_branchId: { day: dayStr, period: periodStr, branchId: branch.id } },
+              create: {
+                day: dayStr,
+                period: periodStr,
+                startTime: periodTime.start,
+                endTime: periodTime.end,
+                roomId: roomDbId,
+                courseId: courseId ?? null,
+                branchId: branch.id,
+              },
+              update: {
+                roomId: roomDbId,
+                courseId: courseId ?? null,
+              },
+            });
+
+            // Link faculty to course (legacy fallback)
+            if (cell.facultyInitials && courseId) {
+              const initials = cell.facultyInitials.split('+');
+              for (const initial of initials) {
+                const facultyId = facultyMap.get(initial.trim());
+                if (facultyId) {
+                  await tx.facultyCourse.upsert({
+                    where: { facultyId_courseId: { facultyId, courseId } },
+                    create: { facultyId, courseId },
+                    update: {},
+                  });
+                }
+              }
+            }
+
+            result.created.slots++;
+          }
         }
-      }
+      }, {
+        timeout: 30000 // 30s timeout for complex integration transaction
+      });
 
       await updateProgress(90, 'Entities integrated. Recomputing analytics...');
 
@@ -262,7 +275,7 @@ const pdfWorker = new Worker(
 
       await prisma.importJob.update({
         where: { id: jobId },
-        data: { status: 'DONE', progress: 100, result },
+        data: { status: 'DONE', progress: 100, result: result as any },
       });
 
       logger.info(`PDF ingestion job ${jobId} completed`, result);
@@ -285,7 +298,7 @@ const pdfWorker = new Worker(
       throw error;
     }
   },
-  { connection: redis, concurrency: 2 }
+  { connection: redis as any, concurrency: 2 }
 );
 
 // ─── Analytics Worker ─────────────────────────────────────────────────────────
@@ -297,7 +310,7 @@ const analyticsWorker = new Worker(
     await computeAnalytics();
     logger.info('Analytics recomputed by worker');
   },
-  { connection: redis, concurrency: 1 }
+  { connection: redis as any, concurrency: 1 }
 );
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -305,7 +318,7 @@ const analyticsWorker = new Worker(
 function mapStatus(progress: number) {
   if (progress < 10) return 'QUEUED';
   if (progress < 65) return 'PARSING';
-  if (progress < 90) return 'INTEGRATING';
+  if (progress < 100) return 'INTEGRATING';
   return 'DONE';
 }
 

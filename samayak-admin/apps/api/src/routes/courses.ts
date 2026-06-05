@@ -77,7 +77,7 @@ coursesRouter.get('/', async (req: Request, res: Response, next: NextFunction) =
 coursesRouter.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const course = await prisma.course.findUnique({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       include: {
         branch: { include: { department: true } },
         faculty: { include: { faculty: true } },
@@ -106,7 +106,7 @@ coursesRouter.post('/', adminOnly, async (req: Request, res: Response, next: Nex
 coursesRouter.patch('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const data = updateCourseSchema.parse(req.body);
-    const course = await prisma.course.update({ where: { id: req.params['id'] }, data });
+    const course = await prisma.course.update({ where: { id: req.params['id'] as string }, data });
     res.json({ success: true, data: course });
   } catch (err) {
     next(err);
@@ -117,7 +117,7 @@ coursesRouter.patch('/:id', adminOnly, async (req: Request, res: Response, next:
 coursesRouter.delete('/:id', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
     await prisma.course.update({
-      where: { id: req.params['id'] },
+      where: { id: req.params['id'] as string },
       data: { status: 'ARCHIVED' },
     });
     res.json({ success: true, message: 'Course archived' });

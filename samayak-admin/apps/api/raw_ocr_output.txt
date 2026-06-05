@@ -1,0 +1,435 @@
+
+=== PAGE 1 ===
+. BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+¢ RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+[Department [CSE | Programm: [BYech | [Branch Jes Semestenvia |
+1 Period/Time/Subject/Room No.*
+Days [7 ww [wo Tv TNE CT vie vn [x
+[08:00-08.50_[ 09:00-09.50 | 10:00-1050 | rr:00-10.50 | 12:00-12.50 |
+. ob ie = | ONS (2197220)
+Monday Col /219 AIML Lab (Lab 3) CC] CC CD (G3) AML (G3) | "30 6a Gay
+ry CNS (219/220)
+ES Lab (Lab 3 BREAK : 3 " (219/22
+} [CNS 21972200
+3 ! 3 )
+[CourseCode | T  CourseName TT Credit |  Tewcher |
+Antiticial Intelligence and Machine Learning (AIML) Dr. Sunchita Paul
+Cryptography and Network Security (CNS) 5 Dr. Sumit Srivastava (Group 1) & Dr. Ravi Sankar Mehta (Group 2)
+Blockehain Technology (BCT) Dr. K. S. Patnaik (Group 1) & Prof. Sandip Dutta (Group 2)
+Constitution of India (Col) [NC [br Anand Kumar (Department of Management)
+11SS
+Prof. Abhijit Mustali & Dr. Rathindranath Dutta
+[or | OEII1/ MOOC I
+[MG Poi | Swmwerdwinne | om
+— | — ——— — — “wemicead_2 | _— — ________— |
+Qs =; [24
+(Prem rast wT (Pe , A!
+Co-ordinator Central Time Table, (Dr. Gautam Sarkhel)
+BIT Mesra Deaprtment Time Table Coordinator HoD Dean (UG Studies)
+
+=== PAGE 2 ===
+. BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+N RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+[Department [CSE | [rogramm: [Bech |  [Branch: [CS [Semester:Vi#
+1 Period/Time/Subject/Room No.*
+Days [Tw ww Tv [TT wie 1 vee] vie ix |
+[08:00-08.50_| 09:00-09.50 | 10:00-10.50 | rn:00-11.50 | 12:00-1250 | 13:30-14.20 15:30-16.20 16:30-17.20
+Ny . CONS (219/220)
+Cal 1219 ES Lab (Lab 6 *D (1) (220 ML (220
+LUNCH - CNS (2197220)
+y BREAK 2 (22 SXCLleH
+AIML(T) B CNS (219/220)
+Y OE | 2,
+
+Thursday Lu rT Lo] 0) D0 “per iGargy
+Col 1219 MTI33 CS - 11219) OE Ili TT] AIML (220) CD (220)
+[CounseCoge | TT CouseName [Credit | Wewher |
+
+C5333 Compiler Design (CD) a Torphbony |
+Artificial buelligence and Machine Leaming (AIML)
+PEIN Cryptography and Network Security (CNS) B Dr_ Sumit Srivastava (Group 1) & Dr. Ravi Sankar Mehia (Group 2)
+
+11353 - Blockehain Technology (BCT) Dr. KS. Pamaik (Group 1) & Prof. Sandip Duta (Group 2)
+
+HSS Constitution of India (Col) Dr. Anand Kumar (Department of Management)
+
+MT133 HSS Communications Skills 11 (CS-11) [Jyoti Kumari (Humanities and Social Sciences Department)
+
+S336 Artificial Intelligence & Machine Leaming Lab (AIML Lub) Dr. Amvitanjali & Dr. Lopamudra Hota
+
+C5334 Compiler Design Lab (CD 1.ab)
+Einbeded System Lab (ES Lab) | 15 |Dr. Rathindranath Dut & Dr. Shreeya Swagatika Sahoo
+1 or | OLIV MOOC EE I
+Cwow [pep | Sewer |
+EE TS
+
+& We i
+Pre Eh | 74 20
+Co-ordinator Central Time Table, cock oe (0Gautam Sarkhel)
+BIT Mesra eaprtment Time Table Coordinator Hob Dean (UG Studies)
+
+=== PAGE 3 ===
+. BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+} RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+Department: JCSE | [Programm [Bech | [Branew: JS [Semesters VIC
+1 Period/Time/Subject/Room No.*
+Days [1 ow [ow [ow Tv TT wie ve] vin
+| 08:00-08.50 | 09:00-09.50 | 10:00-10.50 |  11:00-11.50 | 12:00-12.50 | 13:30-14.20 14:30-15.20 15:30-16.20 16:30-17.20
+Mond; AIML Lab (Lab 4) Col /219 AML) | epg) | CNSE197220)
+onday . Lab (L: olLZ == a BCT (G2/ G3)
+ain CNS (219/220)
+es “ol /219 r[33Cs-1@2 BREAK 21 D219 1S (219/722
+Wednesday | Col/219 MTI33CS - 11219) LO] AML IO) | CDQ yer (G2) 63)
+« CNS (219/220)
+Thursda 2 :S Lab (La y 219 (219
+Thursday [STI] ES Lab (Lab 6) LC] COME) | AML) | C00) Gy
+[CommeCode | 1 CowseName [Crea | Teche 0]
+Compiler Design (CD) [4 [Dr.B.K. Sarkar
+C8335 Artificial Intelligence and Machine Learning (AIML) [4 [or ShrutiGare
+T1349 Cryptography und Network Security (CNS) ) Dr. Sumit Srivastava (Group 1) & Dr. Ravi Sankar Mehta (Group 2)
+11353 Blockehain Technology (BCT) Dr. KS. Patnaik (Group 1) & Prof Sandip Dutta (Group 2)
+Constitution of India (Col) [NC [Dr. P.C_Jha (Department of Management)
+MT133 HSS Communications Skills 11 (CS-11) [15 [Ananya Suha (Humanities and Social Sciences Department)
+S336 “Artilicial Intelligence & Machine Learning Lab (AML Lab) | 1.5 [Dr. Shruti Garg & Dr. Lopamudra Hot
+Compiler Design Lab (CD Lab) [15 [br BK. Sarkar & Dr. Prashant Panay
+Cs338 CUmbeded System Lab (ES Lub) [15 [Dr Sandip Ghosal & Dr. Aditi Panda
+[oe 1] OLIV MOOC EE
+MOO | Pei | Swwertwiwe [2]
+I Towa 22 [|
+QT Pa 26
+(prem Prakash) 6 |! J Por 5
+Co-ordinator Central Time Table, AL" J (Dr#autam Sarkhel)
+BIT Mesra Deaprtment Time Table Coordinator fioD Dean (UG Studies)
+
+=== PAGE 4 ===
+' BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+: RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+Department: [CSE | [Programm: [Bech | [Branch: [65 [Semeste:VID
+1 Period/Time/Subject/Room No.*
+pays [+ uw [wm [wv Twi [owe [ove [ow
+[os:00-0850 | 09:00-09.50 | 1o:00-10.50 | n:0v-11s0 | r2:00-1250 | [3aoda0 [140-520 | 15301620 | 16:30-17.20
+. CNS (219/220)
+“ol 1219 (G2 D (G2 (Gat Ci
+Monday Cr corr AMIS he BCT (G2/G3)
+LUNCH -
+= 5 | CNS (2197220)
+ol 1219 3CS-11(219 BREAK S Lab (Lub 6
+Wednesday | Col /219 MT133CS-11(219) ] ES Lab (Lab 6) BOT (G27. G3)
+. CNS (2197220)
+® Lab (Lab 3 h i2 32
+Thursday OE Il CD Lab (Lab 3) 1] | Jam maf CoG) BOT (G2/ G3)
+ww || TYREE oe TT [wa | ow
+[CowneCode | T CourseMame [Creat | Tewchw
+Compiler Design (CD)
+Anificial Intelligence and Machine Learning (AML)
+Cryptography and Network Security (CNS) p Dr. Sumit Srivastava (Group 1) & Dr. Ravi Sankar Mehta (Group 2)
+Blockehain Technology (BCT) Dr. K. S. Pawaik (Group 1) & Prof. Sandip Duta (Group 2)
+Constitution of India (Col) [NC [br PC Jha (Deparment of Management)
+MT133 Communications Skills I1(CS-11) [15 [Ananya Saha (Humanities and Social Sciences Department)
+Antilicial Intelligence & Machine Leaming Lab (AIML Lab) | 1.5 |Dr. C. Lavania & Dr. Ritesh Jha
+Compiler Design Lub (CD Lub) [15 [be I Mukherjee & Dr Anup Kesh
+oe [  omwmooc [> T— — ~ ]
+I I He
+EY A
+GR 2b
+(remprakashy 61176 pan ” Po
+Co-ordinator Central Time Table, ST (Dr. Gautam sarkhel)
+BIT Mesra Deaprtment Time Table Coordinator HoD Dean (UG Studies)
+
+=== PAGE 5 ===
+BIRLA INSTITUTE OF TECHNOLOGY MESRA, |
+B RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+Department: [CSE | [Programm: [Blech | [Branche JAML __ TSemeste:vi |
+1 Period/Time/Subject/Room No.”
+pays Je we Tv TF "wi Jw var Tx
+o
+OF ll DL Lab BT AIML VI (ILF)(1 1] Z Col /216A MTI33CS- 11216 A
+z
+Thursday OE lll USL Lab (Lab 4) IR (213) =] DM (213) USL (216 A) [ DL(216A) | MAI(216 A)
+[CowneCode [1 CouseName [Credit |  Tewhwr |]
+UnSupervised Leaning (USL)
+Dr. Satish Chander
+Information Retrieval (IR) 3
+Dr. Saikat Chakrabory
+[mrs | uss | Communications Skills ICS [15 Tivo Kumari (Humanities and Social Sciences Department)
+eee — —ommmooc _ — — I-31 — ————— — — _
+eel [sumed |»
+a  hewiGea ms [|
+FV A [ 24
+|
+{prem Prakash) © { Wapisasn=
+Co-ordinator Central Time Table, a = (Dr. Gautam Sarkhel)
+BIT Mesra Deaprtment Time Table Coordinator - Dean (UG Studies)
+
+=== PAGE 6 ===
+BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+. RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+[Department [CSE | [Programm: [BAech | Branch: JCS [Semester:IVA
+C1 Period/Time/Subject/Room No.
+pays nm we Tv Tw [wie vin [x |
+| osonosso [ovonanso [ wanroso | imovtis [rzonizs 00420 | 1301520 | 15301620 | 1630-1720
+Ir [oan [oman [owsan
+= "C/NSS/ Gi J)
+EE NM (214) [NM Lab (Mathematics Dept. Lab) | FLAT (214) 4 IKS (Online Mode) HEC/NSS) il A aha
+H 5-233
+Wednesday | OE-1 | NM(214) S & K Lab (Lab 6) = LL] DAA GY) | FLAT(G2) [1]
+2
+z
+Thursday DAA (G2) | DBMS (G2) 08 (G2) 3 CC] DBMS Lab (Lab 1)
+i2
+[CouneCode | [  CowseName [Crea | Teacher |
+Dr. Debjani Mustali
+Dr. N.K. Singh
+[Cosas | Coe | opemigSysems [5 [DK Rajish
+[Cosa | Coe | Vomol Longuae Awomaa Theoy (LAT) | 4 [Dr Anup Kumar Reshri
+[Cwaeor | Coe | NemercalMebobsNM) [2 [Deparment of Mathematics
+[Cosa | | dn Knowledge Sysem (KS) [0 [Deparment of Management Studies
+CC Teen [oer pp
+[cosa | coe | Dua Buc Mumgemem Sysem 0BMSILb | 15 [Dr Debjani Mustali & Dr. Shreeya Swagatika Sahoo
+[Cosa | Coe | ShlladRemelKilan [15 [De K. Rajnish & Dr. S. Kunungo
+Dr. I. Mukherjee & Dr. Nand Kuniar Jyotish
+Numerical Methods (NM) Lub. [1 [Department of Mathematics
+MC24 20672077 | Activity (Any
+208/209/210 One) INCC / NSS / PI & Games / Creative Arts / Enterprencurship
+I I “Total Credits ess 1]
+GT Ge
+(Prem Prakash) I —~7 QQ A
+Co-ordinator Central Time Table, re ~ (Or. Gautam Sarkhel)
+BIT Mesra Deaprtment Time Table Coordinator HoD Dean (UG Studies)
+
+=== PAGE 7 ===
+: BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+N RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+Department: [CSE | [Programm [BTech | [hranchi [5 [Semester:lVB
+1 Period/Time/Subject/Room No.*
+pp — ew ow Ev LF vif ve vn
+08:00-08.50 | 09:00-09.50 [woos | 11:00-11.50 [zon | 13:30-14.20 14:30-1520 | 15:30-1620 | 16:30-17.20
+_ab (Mathematics Dept
+<
+EF NCC/NSS/PT & Games/ C.
+13
+tad | | we | pase [ose || 5 AP Lab BI CS IV B (Lub 3)
+Friday DBMS Lab (Lab 4) DAA (G3) |] DBMS (ILF) | OS (ILE) [FLAT (1) (ILF)
+[CouneCode [1 CounseName [Creat | Teacher |
+CS24211 Data Base Management System | 3 brs. Pushkar
+524213 Design and Analysis of’ Algorithms | 3 Dr. Nand Kumar Jyotish
+CS24215
+C€$24219 Formal Language Automata Theory (FLAT) [| 4 [Dr NK Singh
+NAZI] Numerical Methods (NM)
+Hs242i1 | | Indian Knowledge System (IKS) | 0 [Department of Management Studies
+TT weane [oer 951 01
+(524212 Data Base Management System (DBMS) Lab | 15 |Dr.S. Pushkar & Mr. BK. Chanda
+524216 Shell and Keel (SK) Lab | 15 |DrS. Kanungo & Dr. Jit Mukherjee
+CS2421% Advanced Programming (AP) | 25 [Dr Ritesh Jha & Dr. Supreeti Kamilya
+MA24202 Numerical Methods (NM) Lab | 1 [Deparunent of Mathemetics
+MT 2d 206 7 ctivity (Any
+/208/209/210| One) NCC / NSS / PT & Games / Creative Arts / Enterpreneurshi
+I Total Credits ES
+Ais a ib
+(Prem Prakash) per Q~ 2
+Co-ordinator Central Time Table, bnamer=" ) (Or. Gautam Sarkhel)
+BIT Mesra Déaprtmeiit Time Table Coordinator : CEO) Dean (UG Studies)
+
+=== PAGE 8 ===
+3 BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+. RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+Department: [CSE | [Programm: [B.Tech | Branch: [C5 [Semesten:IVC
+1 Period/Time/Subject/Room No.
+bap =m wm Tv [ov Fw [wn vw [ix |
+| osonasso | 09:00-09.50 | 10:00-10.50 1:00-1150 | 12:00-12.50 13:30-14.20 14:30-15.20 [issue | 16:30-17.20
+TT IF] NM Lab (Mathematics Dept.
+T/NSS/PT & Games’ CAT
+EEE AP Lab (Lab 1) 1 IKS (Online Mode) pa
+0 iS.
+DBMS (G2)] DAA (G2) FLAT(G2) [| g 0S (G3) DBMS Lab (Lab 4)
+NM (G3) [DBMS (G3) S&K Lab (Lab HBT CS IVC £ I EE ER
+EEE DAS IO) [ RMS 320) FEATCRN os 1]
+[CowneCode [1 CowseName [Cred | Teche |
+Data Base Management System | 3 Dr. Suikat Chakraborty
+524213 Design und Analysis of Algorithms [5 pr) Bakes
+C2205 |” Coe | OpenwingSystams | 3 [or Jit Mukherjee
+CS24219 Formal Language Automata Theory (FLAT) [4 [Dr Supreeti Kamiya
+MA24201 Numerical Methods (NM) | 2 [Department of Mathematics
+Hs24211 | | Indian Knowledge System (IKS) [0 [Deparment of Management Studies
+— Tee | oer [5
+524212 Data Base Management System (DBMS) Lab | 15 Dr. Suikat Chakraborty & Dr. S. Pushkar
+Shell and Kemel (SK) Lab Dr. Jit Mukherjee & Dr. Komal Niaz.
+524218 Advanced Programming (AP) | 25 [Dr.R.S. Mehtu & Dr.) Bukay
+MA24202 Numerical Methods (NM) Lab I  [ocpaimenorMathematien |
+[C24 2067 207 | Activity (Any
+/208/209/210| One) NCC /NSS / PT & Games / Creative Arts / Enterprencurshi
+| ——— E———1 Total Credits TCS
+ae [3k
+(Prem Prakash) A pees wh
+Co-ordinator Central Time Table, Pe Cog - (Dr. Gautam Sarkhel)
+BIT Mesra Deaprtment Time Table Coordinator Dean (UG Studies)
+
+=== PAGE 9 ===
+s BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+Ny RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+Department: [CSET Tevogramm: [B¥ech [| Threw: JS [Semester:ivD
+1 Period/Time/Subject/Room No.*
+pays eee wee vbw = — eve we ver fix |
+08:00-08.50 | 09:00-09.50 | 10:00-10.50 11:00-1150 | 12:00-12.50 13:30-14.20 [sa | 15:30-1620 | 16:30-17.20
+DAA (2
+A) 2
+- < CONES PT ECan C.
+Tuesday NM (220) [DBMS 220) 08 (220) par ay | FLAT FE] IKS (Online Mode) NGCINSS/PT'& Came! CA
+(220) 2 1:5-235
+NM Lab (Mathematics Dept -
+Wednesday OF -1 NM (214) ab (Mathematics Dep 5 FLATALE) | DBMS (LE) | 0S (ILF)
+Lab) ¥
+EE FLAT (LE) | 0S (LF) DBMS (ILF) |] lL] DBMS Lab (Lab 6)
+[CouneCode TT CowseName TT Crea | Teche |
+Dr. Shiveyu Swagatika Suhoo
+CS24213 Design and Analysis of Algorithms [5 [or Kanchan Jha
+esas [Coe | OperaingSysems 3 Tbr. Rathindr Nath Duta
+824219 Formal Language Autonuata Theory (FLAT) | 4 Dr. Md. Shah Fahad
+MA24201 Numerical Methods (NM) [| 2 |Depunment of Mathematics
+Hsu | Indian Knowledge System (IKS) [0 [Deparment ol Management Swdies
+| ———— TN) ES ——— TF EO — | SE, i —————
+Duta Base Management System (DBMS) Lab Dr. Shrecya Swagatika Sahoo
+Shell and Kernel (SK) Lab | 15 [Dr Md.S. Fahad & Dr. Komal Nuas
+‘Advanced Programming (AP) | 25 [Dr Colavania & Dr. J Bukay
+Numerical Methods (NM) Lab | 1 [Deparment of Mathematics
+MCZEI06 7 207 | Activity (Any
+£208/209/210] One) NCC/NSS/ PT & Games / Creative Arts / Lnterprencurship
+ES EE Total Credits ET
+(Prem Prakash) 4ip-e 1 : ‘ wre
+IAAI -
+Co-ordinator Central Time Table, ove a (or. cova Bake)
+BIT Mesra Deaprtment Time Table Coordinator HoD Dean (UG Studies)
+
+=== PAGE 10 ===
+N BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+, RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+Department: JoSE—— T— TProgramm: [BTech Branch: [AIML Semester: IV
+1 Period/Time/Subject/Room No.*
+pays |—+ [ow Tw [ow [ v [TF ww [ vu [ vm x]
+EEE 1A1(G2) DBMS Lab (Lab |) P) ] DAA (216 A) [DBMS 216 A)| 0S (216 A)
+= 5 TPT eS CAE
+ENE 0SQ216A) | 1AIQ216 A) ee FE] KS (Online Mode) Rh ahd
+z
+Thursday 1] 0S (216 A) [DBMS (216 A)| DBMS (216 A) |] 3 1A (1) (214) NM (214) NM Lab
+OE-1 |NMQ216A)[ 1AI(216A) | DAA (216A) ] 1] S&KP Lab (lab 4)
+[CourseCode | [  CourseName | Credit | Teacher |
+CS524211 Data Base Management System [5 IbrV.Kha
+€S24213 Design and Analysis of Algorithms Dr. Komal Nats
+€824215 Dr. Md. Shah Fahad
+A124211 Introduction to Al Dr. Iw Snigdh
+MA24201 Numerical Methods (NM) [2 [Maths Depurment
+Hs | Indian Knowledge System (IKS) [0 [Humanities and Social Sciences Department
+Bee | OE Fy
+CS24212 Data Base Management System (DBMS) Lab Dr. V. K. Jha & Dr. Saikat Chakraborty
+CS24216 Shell and Kernel (SK) Lub’ [Dr Sandip Dutta & Dr. Md. Shah Fahad
+CS24218 ‘Advanced Programming (AP) | 25 Dr. R.S. Mehta & Dr. Kanchan Jha
+MA24202 Numerical Methods (NM) Lab | 1 [Maths Department
+MC24 206/207 | Activity (Any
+208/209/210 One) NCC /NSS / PT & Games / Creative Aris / Enterprencurship
+I Total Credits ss | 0]
+b b
+TPrem Prakash) fle I pa la
+Co-ordinator Central Time Table, Lar PS (Dr. Gadtam Sarkhtt)
+BIT Mesra Deaprtment Time Table Coordinator Dean (UG Studies)
+
+=== PAGE 11 ===
+x BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+R RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+[Department TCSE T Tervogramm: [MCA | Branch: [MCA TSemestesii_____|
+C1 Period/Time/Subject/Room No.*
+pay Lu we wv Fv I Tw wr vi ee
+DMT (216 A) / ;
+Mond 2 DCCN 214) | ToC 2 2
+EN H MAI C14) pcm | rene
+4
+=
+| weanesany | | ITT&T (Lab 4) LC] 2 DCCN QI) | ToC 214) | AcA@14) | DMT (14)
+=]
+Thursday LC] ToC (214) | DEON 14) | SE@14)  [FMOB (214) I] SE Lab (Lab 4)
+[ migy | [macw][mosew] see [oman 1] CS - 11219)
+[CourseCode [| Course Title
+Data Communication and Computer Networks (DCCN) 5 IoeSwmSivasow
+Dr. K. Rajnish
+Data Mining Techniques (DMT)
+Modem ALMA
+Wie | iiss | Fandumeals of Viamagement & Organization ehavorar (FOBT
+Data Communication and Computer Networks Lub (DCCN Lab)
+Dr. Subraject Mohapatra & Dr. Lopamudia Hota
+Communication Skills - I
+rr © vewCeaw Tw
+i=. Prakash) Es 5 NY ne 0b
+Co-ordinator Central Time Table, pian" ’ 2% 918A ft TD
+BIT Mesra Department Time Table Coordinator ol eb
+
+=== PAGE 12 ===
+N BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+. RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+[Department [CSE | Tprogramm: [Mech | Branch JCS Semestestt |
+C1 Period/Time/Subject/Room No.*
+pays JJ Im wv TE ve TF me eve oF vie fC ix.
+El
+=
+[roe | forewn] 1} EF [ween | rem [ owen
+=
+Thursday Deep Learning Lab (Lab S) MOT (G3) El I A
+[CouseCode [| Coumseie [Crea | Teacher |
+[Modern Optimization Techniques (MOT)
+[Ses | Elective [Deep Learning (DL)
+[Duta Anlysis and Interpretation (DAD
+CC ewiCreas | oes |]
+(Prem Prakash) Naan o
+Co-ordinator Central Time Table, = 1 hY Séhds Ho
+BIT Mesra Department Time Table Coordinator HoD Del Studies)
+
+=== PAGE 13 ===
+4 BIRLA INSTITUTE OF TECHNOLOGY MESRA,
+. RANCHI
+Student TIME TABLE SPRING 2026
+wef: 08.01.2026
+[Department: [CSET Programm: [MTech ~~ [ [Branch: [AML Semester: 11
+1 Period/Time/Subject/Room No.*
+Days |— + [ow Tw [ w [ v TT wv TT ww TT vw [ wx |
+08:00-08.50 | wavnso | 10:00-1050 [ons [ans | 13:30-14.20 14:30-1520 | 15:30-1620 | 16:30-17.20
+DLIG
+TRE [
+Wednesday OF OLEI6 | paaiea) | EC@I6A) >
+A) £
+tasty | [| keen) mae |< Advanced Deep Learning Lab (Lab 5)
+[CouseCode [| T — — Coumemitt ~~ T Crean | Teacher
+ALGO [Elective [Concept af Deep Learning (DL) Dr. K. S. Patnaik
+[A626 | lective [Concepts of Reinforcement Learming (RL) Dr. Rathindranath Dutta
+$632 Data Anlysis and Interpretation (DAT) Dr. Akriti Nigam
+I:volutionary Computing (EC) Dr. Ritesh Jha
+11524133 [Conununication Skill - 11 (CS-11) Dr. Rohit Pandey
+Modern Artificial Inelligence (MAT) Dr. Sanchita Pal
+Data Analytics Lab (DA Lab) [2 [br KanchunJha
+Advanced Concepts of Deep Learning Lab (DL Lab) Dr. Shamania Anwar
+m— F———— oy —————; 1] -/1" || BSN] FU Ws Sea SRS |
+YEW p I
+C5 Prakash) & Te ) ee GF 1 oh
+Co-ordinator Central Time Table, Samos ,  hillie 0)
+BIT Mesra Department Time Table Coordinator io! es

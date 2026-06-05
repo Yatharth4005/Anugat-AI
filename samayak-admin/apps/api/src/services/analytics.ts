@@ -3,7 +3,7 @@ import { redis } from '../lib/redis';
 import { logger } from '../lib/logger';
 import {
   AnalyticsDashboard, Day, Period, PERIOD_TIMES,
-  RoomUtilisation, SlotAvailability, UnderRunningCourse
+  RoomUtilisation, SlotAvailability, UnderRunningCourse, RoomType
 } from '@samayak/types';
 
 const CACHE_KEY = 'analytics:dashboard';
@@ -40,7 +40,7 @@ export async function computeAnalytics(): Promise<AnalyticsDashboard> {
     return {
       roomId: room.id,
       roomNumber: room.number,
-      roomType: room.type,
+      roomType: room.type as RoomType,
       occupiedSlots,
       totalSlots: TOTAL_SLOTS_PER_ROOM,
       utilisationPct: Math.round(utilisationPct * 100) / 100,
@@ -55,14 +55,27 @@ export async function computeAnalytics(): Promise<AnalyticsDashboard> {
   // ─── P(Empty Room | Slot) ─────────────────────────────────────────────────
   const slotAvailabilities: SlotAvailability[] = [];
 
+  // Query all occupied timetable slots with room assignments in a single query
+  const allOccupiedSlots = await prisma.timetableSlot.findMany({
+    where: { roomId: { not: null } },
+    select: { day: true, period: true, roomId: true },
+  });
+
+  // Group occupied room IDs by day and period
+  const occupiedRoomsMap = new Map<string, Set<string>>();
+  for (const slot of allOccupiedSlots) {
+    if (!slot.roomId) continue;
+    const key = `${slot.day}_${slot.period}`;
+    if (!occupiedRoomsMap.has(key)) {
+      occupiedRoomsMap.set(key, new Set());
+    }
+    occupiedRoomsMap.get(key)!.add(slot.roomId);
+  }
+
   for (const day of ALL_DAYS) {
     for (const period of ALL_PERIODS) {
-      const occupiedRoomIds = await prisma.timetableSlot.findMany({
-        where: { day, period, roomId: { not: null } },
-        select: { roomId: true },
-      });
-
-      const uniqueOccupied = new Set(occupiedRoomIds.map((s) => s.roomId)).size;
+      const key = `${day}_${period}`;
+      const uniqueOccupied = occupiedRoomsMap.get(key)?.size ?? 0;
       const freeRooms = totalRooms - uniqueOccupied;
       const probability = totalRooms > 0 ? freeRooms / totalRooms : 0;
 
@@ -123,7 +136,8 @@ export async function computeAnalytics(): Promise<AnalyticsDashboard> {
       for (const day of ALL_DAYS) occupiedPerDay.set(day, 0);
 
       for (const slot of room.timetableSlots) {
-        occupiedPerDay.set(slot.day, (occupiedPerDay.get(slot.day) ?? 0) + 1);
+        const d = slot.day as Day;
+        occupiedPerDay.set(d, (occupiedPerDay.get(d) ?? 0) + 1);
       }
 
       let roomEmptyHours = 0;
