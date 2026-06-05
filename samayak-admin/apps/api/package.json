@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "prisma generate && tsc",
+    "build": "pnpm --filter @samayak/types build && prisma generate && tsc",
     "start": "node dist/worker.js & node dist/index.js",
     "start:worker": "node dist/worker.js",
     "worker": "tsx watch src/worker.ts",
