@@ -138,7 +138,7 @@ export default function DashboardPage() {
               <div className="empty-sub">No rooms found. Add rooms to see utilisation.</div>
             </div>
           ) : (
-            <ResponsiveContainer width="100%" height={240} style={{ minHeight: '240px' }}>
+            <ResponsiveContainer width="100%" height={240} minHeight={240}>
               <BarChart data={data.roomUtilisations} margin={{ top: 4, right: 10, left: -20, bottom: 0 }}>
                 <XAxis dataKey="roomNumber" tick={{ fontSize: 11, fontWeight: 600, fill: '#7c8294' }} />
                 <YAxis tick={{ fontSize: 11, fill: '#7c8294' }} domain={[0, 100]} />
@@ -165,7 +165,7 @@ export default function DashboardPage() {
               <div className="empty-sub">No timetable data yet.</div>
             </div>
           ) : (
-            <ResponsiveContainer width="100%" height={240} style={{ minHeight: '240px' }}>
+            <ResponsiveContainer width="100%" height={240} minHeight={240}>
               <BarChart
                 data={PERIODS.map((period) => {
                   const avail = data.slotAvailabilities.filter((s) => s.period === period);
