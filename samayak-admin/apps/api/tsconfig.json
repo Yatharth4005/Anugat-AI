@@ -12,9 +12,7 @@
     "declaration": false,
     "declarationMap": false,
     "sourceMap": true,
-    "paths": {
-      "@samayak/types": ["../../packages/types/src/index.ts"]
-    }
+    "rootDir": "src"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "src/scratch-*.ts"]
