@@ -54,7 +54,7 @@ coursesRouter.get('/', async (req: Request, res: Response, next: NextFunction) =
         where,
         skip: (page - 1) * pageSize,
         take: pageSize,
-        orderBy: { code: 'asc' },
+        orderBy: { createdAt: 'desc' },
         include: {
           branch: {
             select: { id: true, name: true, semester: true, section: true, departmentId: true },

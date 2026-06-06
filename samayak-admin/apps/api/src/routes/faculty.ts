@@ -61,7 +61,7 @@ facultyRouter.get('/', async (req: Request, res: Response, next: NextFunction) =
         where,
         skip: (page - 1) * pageSize,
         take: pageSize,
-        orderBy: { name: 'asc' },
+        orderBy: { createdAt: 'desc' },
         select: {
           id: true, name: true, email: true, role: true, initials: true,
           departmentId: true, status: true, deletedAt: true, createdAt: true,

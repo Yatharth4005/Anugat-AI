@@ -50,7 +50,7 @@ departmentsRouter.get('/', async (req: Request, res: Response, next: NextFunctio
         where,
         skip: (page - 1) * pageSize,
         take: pageSize,
-        orderBy: { name: 'asc' },
+        orderBy: { createdAt: 'desc' },
         include: {
           _count: { select: { branches: true, rooms: true, faculty: true } },
         },

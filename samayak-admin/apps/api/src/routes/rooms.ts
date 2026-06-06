@@ -42,7 +42,7 @@ roomsRouter.get('/', async (req: Request, res: Response, next: NextFunction) => 
         where,
         skip: (page - 1) * pageSize,
         take: pageSize,
-        orderBy: { number: 'asc' },
+        orderBy: { createdAt: 'desc' },
         include: { department: { select: { id: true, name: true, shortCode: true } } },
       }),
     ]);
