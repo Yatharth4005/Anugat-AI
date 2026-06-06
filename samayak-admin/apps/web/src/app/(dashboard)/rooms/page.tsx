@@ -6,6 +6,7 @@ import apiClient from '@/lib/apiClient';
 import type { Room, Department, PaginatedResponse } from '@samayak/types';
 import { RoomType } from '@samayak/types';
 import { useToast } from '@/components/ToastContext';
+import ImportWizard from '@/components/ImportWizard';
 
 async function fetchRooms(page: number, search: string, type?: string, deptId?: string) {
   const params = new URLSearchParams({ page: String(page), pageSize: '20', search });
@@ -36,6 +37,7 @@ export default function RoomsPage() {
   const [showDrawer, setShowDrawer] = useState(false);
   const [editingRoom, setEditingRoom] = useState<Room | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<Room | null>(null);
+  const [showImportModal, setShowImportModal] = useState(false);
 
   const { data, isLoading } = useQuery({
     queryKey: ['rooms', page, search, filterType, filterDept],
@@ -47,8 +49,16 @@ export default function RoomsPage() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => apiClient.delete(`/api/rooms/${id}`),
-    onSuccess: () => { toast('Room deleted', 'success'); qc.invalidateQueries({ queryKey: ['rooms'] }); qc.invalidateQueries({ queryKey: ['analytics'] }); setDeleteConfirm(null); },
-    onError: (err: unknown) => { toast((err as {response?:{data?:{error?:string}}})?.response?.data?.error ?? 'Delete failed', 'error'); },
+    onSuccess: () => { 
+      toast('Room deleted', 'success'); 
+      qc.invalidateQueries({ queryKey: ['rooms'] }); 
+      qc.invalidateQueries({ queryKey: ['analytics'] }); 
+      setDeleteConfirm(null); 
+    },
+    onError: (err: unknown) => { 
+      const details = (err as any)?.response?.data?.error;
+      toast(details ?? 'Delete failed', 'error'); 
+    },
   });
 
   return (
@@ -59,7 +69,7 @@ export default function RoomsPage() {
           <p className="page-subtitle">Lecture rooms, labs, and other spaces</p>
         </div>
         <div className="page-actions">
-          <button className="btn btn-white btn-sm" id="btn-import-rooms">
+          <button className="btn btn-white btn-sm" id="btn-import-rooms" onClick={() => setShowImportModal(true)}>
             <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17,8 12,3 7,8" /><line x1="12" y1="3" x2="12" y2="15" /></svg>
             Import CSV
           </button>
@@ -166,6 +176,20 @@ export default function RoomsPage() {
           onSuccess={() => { qc.invalidateQueries({queryKey:['rooms']}); qc.invalidateQueries({queryKey:['analytics']}); toast(editingRoom ? 'Room updated' : 'Room added', 'success'); setShowDrawer(false); setEditingRoom(null); }} />
       )}
 
+      {showImportModal && (
+        <ImportWizard
+          title="Import Rooms"
+          importEndpoint="/api/rooms/import"
+          sampleColumns={['Room Number', 'Type', 'Capacity', 'Department Short Code']}
+          onClose={() => setShowImportModal(false)}
+          onSuccess={() => {
+            qc.invalidateQueries({ queryKey: ['rooms'] });
+            qc.invalidateQueries({ queryKey: ['analytics'] });
+            toast('Rooms imported successfully', 'success');
+          }}
+        />
+      )}
+
       {deleteConfirm && (
         <div className="modal-overlay">
           <div className="modal" style={{maxWidth:420}}>
@@ -232,7 +256,7 @@ function RoomDrawer({ room, depts, onClose, onSuccess }: { room: Room | null; de
             </div>
             <div className="field-group">
               <label className="field-label">Seating Capacity</label>
-              <input className="input" type="number" value={capacity} onChange={e=>setCapacity(e.target.value)} placeholder="e.g. 60 (leave empty if unknown)" min={1} />
+              <input className="input" type="number" value={capacity} onChange={e=>setCapacity(e.target.value)} placeholder="e.g. 60" min={1} required />
               <span className="input-hint">Required for accurate utilisation calculations</span>
             </div>
             <div className="field-group">

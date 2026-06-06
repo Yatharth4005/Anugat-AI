@@ -6,6 +6,7 @@ import apiClient from '@/lib/apiClient';
 import type { Course, Department, Branch, PaginatedResponse } from '@samayak/types';
 import { CourseType } from '@samayak/types';
 import { useToast } from '@/components/ToastContext';
+import ImportWizard from '@/components/ImportWizard';
 
 const COURSE_TYPE_LABELS: Record<CourseType, string> = { LECTURE: 'Lecture', LAB: 'Lab', TUTORIAL: 'Tutorial' };
 
@@ -26,6 +27,7 @@ export default function CoursesPage() {
   const [filterBranch, setFilterBranch] = useState('');
   const [showDrawer, setShowDrawer] = useState(false);
   const [editingCourse, setEditingCourse] = useState<Course | null>(null);
+  const [showImportModal, setShowImportModal] = useState(false);
 
   const { data: depts } = useQuery({
     queryKey: ['departments-list'],
@@ -53,18 +55,33 @@ export default function CoursesPage() {
 
   const archiveMutation = useMutation({
     mutationFn: async (id: string) => apiClient.delete(`/api/courses/${id}`),
-    onSuccess: () => { toast('Course archived', 'success'); qc.invalidateQueries({ queryKey: ['courses'] }); },
+    onSuccess: () => { 
+      toast('Course archived', 'success'); 
+      qc.invalidateQueries({ queryKey: ['courses'] }); 
+      qc.invalidateQueries({ queryKey: ['analytics'] });
+    },
   });
+
+  const activeDeptObj = depts?.find(d => d.id === filterDept);
+  const activeBranchObj = branches?.find(b => b.id === filterBranch);
 
   return (
     <div className="page-container">
       <div className="page-header">
         <div>
           <h1 className="page-title">Courses</h1>
-          <p className="page-subtitle">Manage courses scoped by branch and semester</p>
+          {filterDept || filterBranch ? (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 6 }}>
+              <span className="badge badge-blue" style={{ fontSize: 13, fontWeight: 700, padding: '5px 10px' }}>
+                Editing Scope: {activeDeptObj?.name} {activeBranchObj ? `(Sem ${activeBranchObj.semester} - Sec ${activeBranchObj.section})` : ''}
+              </span>
+            </div>
+          ) : (
+            <p className="page-subtitle">Manage courses scoped by branch and semester</p>
+          )}
         </div>
         <div className="page-actions">
-          <button className="btn btn-white btn-sm" id="btn-import-courses">
+          <button className="btn btn-white btn-sm" id="btn-import-courses" onClick={() => setShowImportModal(true)}>
             <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17,8 12,3 7,8" /><line x1="12" y1="3" x2="12" y2="15" /></svg>
             Import CSV
           </button>
@@ -135,7 +152,9 @@ export default function CoursesPage() {
                     <td><span className={`badge course-${course.type}`}>{COURSE_TYPE_LABELS[course.type]}</span></td>
                     <td>
                       {course.credits === 0 ? (
-                        <span className="badge badge-orange">0 Credits</span>
+                        <span className="badge badge-orange" style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                          ⚠️ 0 Credits
+                        </span>
                       ) : (
                         <span style={{fontWeight:700}}>{course.credits} cr</span>
                       )}
@@ -175,7 +194,27 @@ export default function CoursesPage() {
           course={editingCourse}
           depts={depts ?? []}
           onClose={() => { setShowDrawer(false); setEditingCourse(null); }}
-          onSuccess={() => { qc.invalidateQueries({queryKey:['courses']}); toast(editingCourse ? 'Course updated' : 'Course added', 'success'); setShowDrawer(false); setEditingCourse(null); }}
+          onSuccess={() => { 
+            qc.invalidateQueries({queryKey:['courses']}); 
+            qc.invalidateQueries({queryKey:['analytics']});
+            toast(editingCourse ? 'Course updated' : 'Course added', 'success'); 
+            setShowDrawer(false); 
+            setEditingCourse(null); 
+          }}
+        />
+      )}
+
+      {showImportModal && (
+        <ImportWizard
+          title="Import Courses"
+          importEndpoint="/api/courses/import"
+          sampleColumns={['Course Code', 'Course Name', 'Credits', 'Type', 'Department Short Code', 'Semester', 'Section']}
+          onClose={() => setShowImportModal(false)}
+          onSuccess={() => {
+            qc.invalidateQueries({ queryKey: ['courses'] });
+            qc.invalidateQueries({ queryKey: ['analytics'] });
+            toast('Courses imported successfully', 'success');
+          }}
         />
       )}
     </div>

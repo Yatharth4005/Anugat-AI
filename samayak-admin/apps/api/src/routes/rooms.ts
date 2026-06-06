@@ -123,19 +123,59 @@ roomsRouter.post('/import', adminOnly, upload.single('file'), async (req: Reques
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
       try {
+        let departmentId = row['departmentId'] || row['Department ID'] || row['department_id'] || row['department'] || row['Department'] || row['DEPARTMENT'] || row['departmentShortCode'] || row['Department Short Code'] || row['shortCode'] || row['Short Code'];
+        if (!departmentId) {
+          throw new Error('Department (ID, name, or code) is required');
+        }
+
+        // If not a UUID, search department
+        if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(String(departmentId))) {
+          const deptSearch = String(departmentId).trim();
+          const dept = await prisma.department.findFirst({
+            where: {
+              OR: [
+                { shortCode: { equals: deptSearch, mode: 'insensitive' } },
+                { name: { equals: deptSearch, mode: 'insensitive' } },
+              ]
+            }
+          });
+          if (!dept) {
+            throw new Error(`Department "${deptSearch}" not found`);
+          }
+          departmentId = dept.id;
+        } else {
+          const deptExists = await prisma.department.findUnique({ where: { id: String(departmentId) } });
+          if (!deptExists) throw new Error(`Department with ID ${departmentId} not found`);
+        }
+
+        const rawCapacity = row['capacity'] || row['Capacity'] || row['CAPACITY'] || row['seatingCapacity'] || row['Seating Capacity'];
+        const capacity = rawCapacity !== undefined && String(rawCapacity).trim() !== ''
+          ? Number(String(rawCapacity).replace(/[^\d.]/g, ''))
+          : null;
+
         const data = createRoomSchema.parse({
-          number: row['number'] || row['Room Number'] || row['ROOM'],
-          type: row['type'] || row['Type'] || row['ROOM TYPE'] || 'CLASSROOM',
-          capacity: row['capacity'] ? Number(row['capacity']) : null,
-          departmentId: row['departmentId'] || row['Department ID'],
+          number: String(row['number'] || row['Room Number'] || row['ROOM'] || '').trim(),
+          type: String(row['type'] || row['Type'] || row['ROOM TYPE'] || 'CLASSROOM').toUpperCase(),
+          capacity,
+          departmentId,
         });
 
-        await prisma.room.upsert({
+        const existingRoom = await prisma.room.findUnique({
           where: { number_departmentId: { number: data.number, departmentId: data.departmentId } },
-          create: data,
-          update: { capacity: data.capacity, type: data.type },
         });
-        results.created++;
+
+        if (existingRoom) {
+          await prisma.room.update({
+            where: { id: existingRoom.id },
+            data: { capacity: data.capacity, type: data.type },
+          });
+          results.updated++;
+        } else {
+          await prisma.room.create({
+            data,
+          });
+          results.created++;
+        }
       } catch (e: unknown) {
         results.errors.push({ row: i + 2, error: e instanceof Error ? e.message : 'Unknown error' });
         results.skipped++;

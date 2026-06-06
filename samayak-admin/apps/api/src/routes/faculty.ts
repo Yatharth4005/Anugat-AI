@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
+import * as fs from 'fs';
 import bcrypt from 'bcryptjs';
 import { prisma } from '../lib/prisma';
 import { authenticate, adminOnly } from '../middleware/auth';
@@ -148,15 +149,42 @@ facultyRouter.post('/import/preview', adminOnly, upload.single('file'), async (r
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
       const rawEmail = row['email'] || row['Email'] || row['EMAIL'];
-      const email = rawEmail ? String(rawEmail) : undefined;
+      const email = rawEmail ? String(rawEmail).trim() : '';
       const existing = email ? await prisma.faculty.findUnique({ where: { email } }) : null;
+
+      // Resolve department
+      const deptSearch = String(row['department'] || row['Department'] || row['DEPARTMENT'] || row['departmentShortCode'] || row['shortCode'] || row['Short Code'] || '').trim();
+      let departmentId: string | null = null;
+      let departmentName: string | null = null;
+
+      if (deptSearch) {
+        const dept = await prisma.department.findFirst({
+          where: {
+            OR: [
+              { shortCode: { equals: deptSearch, mode: 'insensitive' } },
+              { name: { equals: deptSearch, mode: 'insensitive' } },
+            ],
+          },
+        });
+        if (dept) {
+          departmentId = dept.id;
+          departmentName = dept.name;
+        }
+      }
+
+      let roleVal = String(row['role'] || row['Role'] || row['ROLE'] || 'PROFESSOR').toUpperCase().trim();
+      if (!Object.values(Role).includes(roleVal as Role)) {
+        roleVal = 'PROFESSOR';
+      }
 
       preview.push({
         rowIndex: i + 2,
-        name: row['name'] || row['Name'] || row['NAME'],
+        name: String(row['name'] || row['Name'] || row['NAME'] || '').trim(),
         email,
-        role: row['role'] || row['Role'] || 'PROFESSOR',
-        initials: row['initials'] || row['Initials'] || '',
+        role: roleVal,
+        initials: String(row['initials'] || row['Initials'] || '').trim().toUpperCase(),
+        departmentId,
+        departmentName: departmentName || (deptSearch ? `${deptSearch} (Not Found)` : ''),
         status: existing ? 'DUPLICATE' : 'NEW',
         existingRecord: existing ? { id: existing.id, name: existing.name } : null,
       });
@@ -171,16 +199,25 @@ facultyRouter.post('/import/preview', adminOnly, upload.single('file'), async (r
 // POST /api/faculty/import/commit
 facultyRouter.post('/import/commit', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { rows, duplicateAction } = z.object({
-      rows: z.array(z.object({
-        name: z.string(),
-        email: z.string().email(),
-        role: z.nativeEnum(Role).default(Role.PROFESSOR),
-        initials: z.string(),
-        departmentId: z.string().optional().nullable(),
-      })),
-      duplicateAction: z.enum(['skip', 'merge']).default('skip'),
-    }).parse(req.body);
+    let validated;
+    try {
+      validated = z.object({
+        rows: z.array(z.object({
+          name: z.string(),
+          email: z.string().email(),
+          role: z.nativeEnum(Role).default(Role.PROFESSOR),
+          initials: z.string(),
+          departmentId: z.string().optional().nullable(),
+        })),
+        duplicateAction: z.enum(['skip', 'merge']).default('skip'),
+      }).parse(req.body);
+    } catch (e: any) {
+      if (e instanceof z.ZodError) {
+        fs.writeFileSync('f:/Anugat AI/zod_error_log.txt', JSON.stringify({ body: req.body, errors: e.errors }, null, 2));
+      }
+      throw e;
+    }
+    const { rows, duplicateAction } = validated;
 
     const results = { created: 0, merged: 0, skipped: 0, errors: [] as { email: string; error: string }[] };
 

@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import apiClient from '@/lib/apiClient';
-import type { Department, PaginatedResponse } from '@samayak/types';
+import type { Department, Branch, PaginatedResponse } from '@samayak/types';
 import { useToast } from '@/components/ToastContext';
+import ImportWizard from '@/components/ImportWizard';
 
 async function fetchDepartments(page: number, search: string) {
   const res = await apiClient.get<PaginatedResponse<Department> & { success: boolean }>(
@@ -21,6 +22,8 @@ export default function DepartmentsPage() {
   const [showAddDrawer, setShowAddDrawer] = useState(false);
   const [editingDept, setEditingDept] = useState<Department | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<Department | null>(null);
+  const [showImportModal, setShowImportModal] = useState(false);
+  const [selectedDeptForBranches, setSelectedDeptForBranches] = useState<Department | null>(null);
 
   const { data, isLoading } = useQuery({
     queryKey: ['departments', page, search],
@@ -38,7 +41,30 @@ export default function DepartmentsPage() {
       setDeleteConfirm(null);
     },
     onError: (err: unknown) => {
-      const msg = (err as { response?: { data?: { error?: string } } })?.response?.data?.error ?? 'Delete failed';
+      const status = (err as { response?: { status?: number } })?.response?.status;
+      const respData = (err as { response?: { data?: any } })?.response?.data;
+      if (status === 409 && respData?.details) {
+        if (window.confirm(`Warning: This department has ${respData.details.branches} branches, ${respData.details.rooms} rooms, and ${respData.details.faculty} faculty members. Deleting it will permanently remove all associated courses and timetable slots. Do you want to force delete all related records?`)) {
+          deleteMutationForce.mutate(deleteConfirm!.id);
+        }
+      } else {
+        const msg = respData?.error ?? 'Delete failed';
+        toast(msg, 'error');
+      }
+    },
+  });
+
+  const deleteMutationForce = useMutation({
+    mutationFn: async (id: string) => {
+      await apiClient.delete(`/api/departments/${id}?force=true`);
+    },
+    onSuccess: () => {
+      toast('Department and all associated records deleted', 'success');
+      qc.invalidateQueries({ queryKey: ['departments'] });
+      setDeleteConfirm(null);
+    },
+    onError: (err: unknown) => {
+      const msg = (err as { response?: { data?: { error?: string } } })?.response?.data?.error ?? 'Force delete failed';
       toast(msg, 'error');
     },
   });
@@ -51,7 +77,7 @@ export default function DepartmentsPage() {
           <p className="page-subtitle">Manage academic departments and branches</p>
         </div>
         <div className="page-actions">
-          <button className="btn btn-white btn-sm" id="btn-import-departments" onClick={() => toast('Import departments via CSV file', 'info')}>
+          <button className="btn btn-white btn-sm" id="btn-import-departments" onClick={() => setShowImportModal(true)}>
             <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17,8 12,3 7,8" /><line x1="12" y1="3" x2="12" y2="15" /></svg>
             Import CSV
           </button>
@@ -117,7 +143,15 @@ export default function DepartmentsPage() {
                   <td>
                     <span className="badge badge-blue">{dept.shortCode}</span>
                   </td>
-                  <td style={{ fontWeight: 600 }}>{(dept as Department & { _count?: { branches: number } })._count?.branches ?? 0}</td>
+                  <td>
+                    <button 
+                      className="btn btn-ghost btn-sm" 
+                      style={{ fontWeight: 700, color: 'var(--brand-deep)', background: 'var(--canvas-2)', padding: '4px 10px', borderRadius: 8 }}
+                      onClick={() => setSelectedDeptForBranches(dept)}
+                    >
+                      {(dept as Department & { _count?: { branches: number } })._count?.branches ?? 0} branch(es)
+                    </button>
+                  </td>
                   <td style={{ fontWeight: 600 }}>{(dept as Department & { _count?: { rooms: number } })._count?.rooms ?? 0}</td>
                   <td style={{ fontWeight: 600 }}>{(dept as Department & { _count?: { faculty: number } })._count?.faculty ?? 0}</td>
                   <td>
@@ -163,6 +197,28 @@ export default function DepartmentsPage() {
         />
       )}
 
+      {/* Branch CRUD Manager Modal */}
+      {selectedDeptForBranches && (
+        <BranchManagerModal
+          dept={selectedDeptForBranches}
+          onClose={() => setSelectedDeptForBranches(null)}
+        />
+      )}
+
+      {/* Import Modal */}
+      {showImportModal && (
+        <ImportWizard
+          title="Import Departments"
+          importEndpoint="/api/departments/import"
+          sampleColumns={['Name', 'Short Code']}
+          onClose={() => setShowImportModal(false)}
+          onSuccess={() => {
+            qc.invalidateQueries({ queryKey: ['departments'] });
+            toast('Import finished', 'success');
+          }}
+        />
+      )}
+
       {/* Delete Confirm Modal */}
       {deleteConfirm && (
         <div className="modal-overlay">
@@ -178,8 +234,8 @@ export default function DepartmentsPage() {
             </div>
             <div className="modal-footer">
               <button className="btn btn-ghost" onClick={() => setDeleteConfirm(null)}>Cancel</button>
-              <button className="btn btn-danger" onClick={() => deleteMutation.mutate(deleteConfirm.id)} disabled={deleteMutation.isPending}>
-                {deleteMutation.isPending ? <span className="spinner" /> : null}
+              <button className="btn btn-danger" onClick={() => deleteMutation.mutate(deleteConfirm.id)} disabled={deleteMutation.isPending || deleteMutationForce.isPending}>
+                {(deleteMutation.isPending || deleteMutationForce.isPending) ? <span className="spinner" /> : null}
                 Delete
               </button>
             </div>
@@ -247,5 +303,180 @@ function DepartmentDrawer({ dept, onClose, onSuccess }: { dept: Department | nul
         </form>
       </div>
     </>
+  );
+}
+
+function BranchManagerModal({ dept, onClose }: { dept: Department; onClose: () => void }) {
+  const qc = useQueryClient();
+  const { toast } = useToast();
+  const [bName, setBName] = useState('');
+  const [bSemester, setBSemester] = useState('1');
+  const [bSection, setBSection] = useState('A');
+  const [editingBranch, setEditingBranch] = useState<Branch | null>(null);
+
+  const { data: deptDetails, isLoading, refetch } = useQuery({
+    queryKey: ['department-details', dept.id],
+    queryFn: async () => {
+      const res = await apiClient.get<{ success: boolean; data: Department & { branches: Branch[] } }>(
+        `/api/departments/${dept.id}`
+      );
+      return res.data.data;
+    },
+  });
+
+  const addBranchMutation = useMutation({
+    mutationFn: async (payload: { name: string; semester: number; section: string }) => {
+      return apiClient.post(`/api/departments/${dept.id}/branches`, payload);
+    },
+    onSuccess: () => {
+      toast('Branch added successfully', 'success');
+      setBName('');
+      setBSemester('1');
+      setBSection('A');
+      refetch();
+      qc.invalidateQueries({ queryKey: ['departments'] });
+    },
+    onError: (err: any) => {
+      toast(err?.response?.data?.error ?? 'Failed to add branch', 'error');
+    },
+  });
+
+  const updateBranchMutation = useMutation({
+    mutationFn: async ({ branchId, payload }: { branchId: string; payload: { name: string; semester: number; section: string } }) => {
+      return apiClient.patch(`/api/departments/${dept.id}/branches/${branchId}`, payload);
+    },
+    onSuccess: () => {
+      toast('Branch updated successfully', 'success');
+      setEditingBranch(null);
+      setBName('');
+      setBSemester('1');
+      setBSection('A');
+      refetch();
+      qc.invalidateQueries({ queryKey: ['departments'] });
+    },
+    onError: (err: any) => {
+      toast(err?.response?.data?.error ?? 'Failed to update branch', 'error');
+    },
+  });
+
+  const deleteBranchMutation = useMutation({
+    mutationFn: async ({ branchId, force }: { branchId: string; force?: boolean }) => {
+      return apiClient.delete(`/api/departments/${dept.id}/branches/${branchId}${force ? '?force=true' : ''}`);
+    },
+    onSuccess: () => {
+      toast('Branch deleted successfully', 'success');
+      refetch();
+      qc.invalidateQueries({ queryKey: ['departments'] });
+    },
+    onError: (err: any) => {
+      if (err?.response?.status === 409) {
+        const details = err.response.data.details;
+        if (window.confirm(`Warning: This branch has ${details.courses} courses and ${details.timetableSlots} timetable slots depending on it. Deleting it will cascade delete all related timetable records. Do you want to force delete?`)) {
+          deleteBranchMutation.mutate({ branchId: err.config.url.split('/').pop().split('?')[0], force: true });
+        }
+      } else {
+        toast(err?.response?.data?.error ?? 'Failed to delete branch', 'error');
+      }
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const payload = { name: bName, semester: Number(bSemester), section: bSection.toUpperCase() };
+    if (editingBranch) {
+      updateBranchMutation.mutate({ branchId: editingBranch.id, payload });
+    } else {
+      addBranchMutation.mutate(payload);
+    }
+  };
+
+  const handleEditClick = (branch: Branch) => {
+    setEditingBranch(branch);
+    setBName(branch.name);
+    setBSemester(branch.semester.toString());
+    setBSection(branch.section);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingBranch(null);
+    setBName('');
+    setBSemester('1');
+    setBSection('A');
+  };
+
+  return (
+    <div className="modal-overlay" style={{ zIndex: 90 }}>
+      <div className="modal" style={{ maxWidth: 720, width: '90%' }}>
+        <div className="modal-header">
+          <div className="modal-title">Branches: {dept.name} ({dept.shortCode})</div>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 24, color: 'var(--muted)' }}>×</button>
+        </div>
+        <div className="modal-body" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+            {/* Form */}
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 12 }}>
+                {editingBranch ? 'Edit Branch' : 'Add Branch Manually'}
+              </div>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div className="field-group">
+                  <label className="field-label">Branch Name</label>
+                  <input className="input" value={bName} onChange={e => setBName(e.target.value)} placeholder="e.g. B.Tech CSE VI Sem - Sec A" required />
+                </div>
+                <div className="grid-2">
+                  <div className="field-group">
+                    <label className="field-label">Semester</label>
+                    <input className="input" type="number" min={1} max={10} value={bSemester} onChange={e => setBSemester(e.target.value)} required />
+                  </div>
+                  <div className="field-group">
+                    <label className="field-label">Section / Code</label>
+                    <input className="input" value={bSection} onChange={e => setBSection(e.target.value)} placeholder="e.g. A" required maxLength={10} />
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: 8, marginTop: 6 }}>
+                  <button type="submit" className="btn btn-primary btn-sm" style={{ flex: 1 }}>
+                    {addBranchMutation.isPending || updateBranchMutation.isPending ? <span className="spinner" /> : null}
+                    {editingBranch ? 'Save Changes' : 'Add Branch'}
+                  </button>
+                  {editingBranch && (
+                    <button type="button" className="btn btn-ghost btn-sm" onClick={handleCancelEdit}>
+                      Cancel
+                    </button>
+                  )}
+                </div>
+              </form>
+            </div>
+
+            {/* List */}
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 12 }}>Existing Branches</div>
+              {isLoading ? (
+                <div className="skeleton" style={{ height: 120 }} />
+              ) : !deptDetails?.branches?.length ? (
+                <div style={{ fontSize: 13, color: 'var(--muted)', textAlign: 'center', padding: '24px 0' }}>No branches defined yet.</div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxHeight: 300, overflowY: 'auto', paddingRight: 6 }}>
+                  {deptDetails.branches.map((b) => (
+                    <div key={b.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 12px', background: 'var(--canvas-2)', borderRadius: 10, border: '1px solid var(--line)' }}>
+                      <div>
+                        <div style={{ fontWeight: 700, fontSize: 13.5 }}>{b.name}</div>
+                        <div style={{ fontSize: 11.5, color: 'var(--muted)', marginTop: 2 }}>Sem {b.semester} · Sec {b.section}</div>
+                      </div>
+                      <div style={{ display: 'flex', gap: 4 }}>
+                        <button className="btn btn-ghost btn-xs" onClick={() => handleEditClick(b)}>Edit</button>
+                        <button className="btn btn-danger btn-xs" onClick={() => deleteBranchMutation.mutate({ branchId: b.id })}>Delete</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="modal-footer">
+          <button className="btn btn-ghost" onClick={onClose}>Close</button>
+        </div>
+      </div>
+    </div>
   );
 }

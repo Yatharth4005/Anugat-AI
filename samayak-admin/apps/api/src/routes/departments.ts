@@ -20,6 +20,14 @@ const createDeptSchema = z.object({
 
 const updateDeptSchema = createDeptSchema.partial();
 
+const createBranchSchema = z.object({
+  name: z.string().min(2).max(200),
+  semester: z.number().int().min(1).max(10),
+  section: z.string().min(1).max(20),
+});
+
+const updateBranchSchema = createBranchSchema.partial();
+
 // GET /api/departments
 departmentsRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -174,6 +182,120 @@ departmentsRouter.post('/import', adminOnly, upload.single('file'), async (req: 
     }
 
     res.json({ success: true, data: results });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /api/departments/:id/branches
+departmentsRouter.post('/:id/branches', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const departmentId = req.params['id'] as string;
+    const { name, semester, section } = createBranchSchema.parse(req.body);
+
+    const deptExists = await prisma.department.findUnique({ where: { id: departmentId } });
+    if (!deptExists) throw new AppError(404, 'Department not found');
+
+    const existingBranch = await prisma.branch.findUnique({
+      where: {
+        departmentId_semester_section: { departmentId, semester, section },
+      },
+    });
+
+    if (existingBranch) {
+      throw new AppError(400, `Branch with semester ${semester} and section ${section} already exists in this department`);
+    }
+
+    const branch = await prisma.branch.create({
+      data: {
+        name,
+        semester,
+        section,
+        departmentId,
+      },
+    });
+
+    res.status(201).json({ success: true, data: branch });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// PATCH /api/departments/:id/branches/:branchId
+departmentsRouter.patch('/:id/branches/:branchId', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const departmentId = req.params['id'] as string;
+    const branchId = req.params['branchId'] as string;
+    const data = updateBranchSchema.parse(req.body);
+
+    const branch = await prisma.branch.findFirst({
+      where: { id: branchId, departmentId },
+    });
+    if (!branch) throw new AppError(404, 'Branch not found in this department');
+
+    if (data.semester !== undefined || data.section !== undefined) {
+      const semester = data.semester ?? branch.semester;
+      const section = data.section ?? branch.section;
+
+      const existingBranch = await prisma.branch.findFirst({
+        where: {
+          departmentId,
+          semester,
+          section,
+          id: { not: branchId },
+        },
+      });
+
+      if (existingBranch) {
+        throw new AppError(400, `Another branch with semester ${semester} and section ${section} already exists`);
+      }
+    }
+
+    const updated = await prisma.branch.update({
+      where: { id: branchId },
+      data,
+    });
+
+    res.json({ success: true, data: updated });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE /api/departments/:id/branches/:branchId
+departmentsRouter.delete('/:id/branches/:branchId', adminOnly, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const departmentId = req.params['id'] as string;
+    const branchId = req.params['branchId'] as string;
+
+    const branch = await prisma.branch.findFirst({
+      where: { id: branchId, departmentId },
+      include: {
+        _count: {
+          select: { courses: true, timetableSlots: true },
+        },
+      },
+    });
+    if (!branch) throw new AppError(404, 'Branch not found in this department');
+
+    const totalDeps = branch._count.courses + branch._count.timetableSlots;
+    if (totalDeps > 0 && !req.query['force']) {
+      res.status(409).json({
+        success: false,
+        error: 'Branch has dependent courses/timetable slots',
+        details: {
+          courses: branch._count.courses,
+          timetableSlots: branch._count.timetableSlots,
+          total: totalDeps,
+        },
+        hint: 'Add ?force=true to delete all dependent records',
+      });
+      return;
+    }
+
+    await prisma.branch.delete({ where: { id: branchId } });
+    await invalidateAnalyticsCache();
+    res.json({ success: true, message: 'Branch deleted' });
   } catch (err) {
     next(err);
   }
