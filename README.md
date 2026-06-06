@@ -8,49 +8,8 @@
 
 Samyak Admin is engineered to handle complex, resource-intensive PDF parsing and OCR ingestion flows asynchronously. By decoupling file ingestion from the HTTP request-response cycle, the system ensures that academic coordinators never experience a frozen UI or gateway timeouts while massive timetable documents are parsed, structured, and integrated.
 
-```mermaid
-flowchart TD
-    subgraph Client ["Next.js Frontend (Port 3000)"]
-        UI["Admin Panel UI"]
-        Poll["Job Progress Poller (every 2s)"]
-    end
+<img width="1536" height="1024" alt="System-Architecture-SamayakAdmin" src="https://github.com/user-attachments/assets/989e8bc3-e53d-421e-a429-fd0a706416dc" />
 
-    subgraph API ["Express Server (Port 4000)"]
-        Gateway["Express Router"]
-        QueueClient["BullMQ Ingestion Queue Client"]
-    end
-
-    subgraph DB ["Data & Queue (Local Docker / Production)"]
-        RedisDb[("Redis Queue Store")]
-        PostgresDb[("PostgreSQL DB (Prisma)")]
-        CacheTable[("Analytics Cache Table")]
-    end
-
-    subgraph Worker ["BullMQ Worker (Port 4000)"]
-        Parser["PDF Parsing Pipeline
-        (pdf-parse / Tesseract.js OCR)"]
-        Integrator["Entity Integration Router
-        (Transaction block)"]
-    end
-
-    %% Flow lines
-    UI -->|1. Upload Timetable PDF| Gateway
-    Gateway -->|2. Create ImportJob (QUEUED)| PostgresDb
-    Gateway -->|3. Enqueue Ingestion Job| QueueClient
-    QueueClient -->|4. Store Job Payload| RedisDb
-    Gateway -->|5. Respond 202 Accepted + Job ID| UI
-    
-    UI -->|6. Start Polling| Poll
-    Poll -->|7. Query Job Status| Gateway
-    Gateway -->|8. Fetch Job Record| PostgresDb
-    
-    RedisDb -.->|9. Dequeue Job| Parser
-    Parser -->|10. Extract raw text & OCR| Parser
-    Parser -->|11. Ingest & Upsert records| Integrator
-    Integrator -->|12. Transaction commits| PostgresDb
-    Integrator -->|13. Invalidate & Recompute| CacheTable
-    Integrator -->|14. Mark Job as DONE/FAILED| PostgresDb
-```
 
 ---
 
